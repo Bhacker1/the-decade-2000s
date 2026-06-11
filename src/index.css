@@ -1,0 +1,297 @@
+@import 'tailwindcss';
+
+/* ============================================================
+   THE DECADE · Design System
+   Dark editorial precision meets 2000s pop-chrome energy.
+   ============================================================ */
+
+@theme {
+  /* ---- Surfaces (near-black, faint cool cast) ---- */
+  --color-void: #060609;
+  --color-abyss: #0a0a11;
+  --color-surface: #101019;
+  --color-surface-2: #16161f;
+  --color-line: rgba(255, 255, 255, 0.09);
+  --color-line-strong: rgba(255, 255, 255, 0.16);
+
+  /* ---- Ink ---- */
+  --color-ink: #f6f6f3;
+  --color-mist: #a2a2af;
+  --color-faint: #828292;
+
+  /* ---- Aluminum / chrome (Apple homage) ---- */
+  --color-chrome: #d6dae1;
+  --color-steel: #9aa0ab;
+
+  /* ---- 2000s iPod-ad pop accents ---- */
+  --color-acid: #d6ff3b;
+  --color-lime: #b6ff2e;
+  --color-cyan: #38e8ff;
+  --color-magenta: #ff2e9a;
+  --color-tangerine: #ff7a18;
+  --color-cobalt: #4366ff;
+  --color-grape: #a855f7;
+
+  /* ---- Typography ---- */
+  --font-display: 'Space Grotesk', ui-sans-serif, system-ui, sans-serif;
+  --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+
+  /* ---- Fluid display scale ---- */
+  --text-mega: clamp(3rem, 13vw, 13rem);
+  --text-giant: clamp(2.5rem, 9vw, 8rem);
+  --text-huge: clamp(2rem, 6vw, 5rem);
+  --text-big: clamp(1.6rem, 4vw, 3.25rem);
+
+  /* ---- Easing ---- */
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out-quint: cubic-bezier(0.83, 0, 0.17, 1);
+}
+
+/* ============================================================
+   Base
+   ============================================================ */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-rendering: optimizeLegibility;
+  scroll-behavior: auto; /* Lenis drives smooth scroll */
+}
+
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+body {
+  margin: 0;
+  min-height: 100svh;
+  background: var(--color-void);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  font-size: clamp(15px, 1.05vw, 18px);
+  line-height: 1.6;
+  letter-spacing: 0.01em;
+  overflow-x: clip;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-synthesis: none;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  line-height: 0.98;
+  letter-spacing: -0.03em;
+  margin: 0;
+  text-wrap: balance;
+}
+
+p {
+  margin: 0;
+  text-wrap: pretty;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+  color: inherit;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+img,
+svg,
+canvas {
+  display: block;
+  max-width: 100%;
+}
+
+::selection {
+  background: var(--color-acid);
+  color: #07070b;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-acid);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 9px;
+  height: 9px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-void);
+}
+::-webkit-scrollbar-thumb {
+  background: #26262f;
+  border-radius: 99px;
+  border: 2px solid var(--color-void);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #34343f;
+}
+
+/* ============================================================
+   Utility layer
+   ============================================================ */
+@layer utilities {
+  /* Centered, padded content column */
+  .u-container {
+    width: 100%;
+    max-width: 80rem;
+    margin-inline: auto;
+    padding-inline: clamp(1.25rem, 5vw, 5rem);
+  }
+  .u-container-wide {
+    width: 100%;
+    max-width: 96rem;
+    margin-inline: auto;
+    padding-inline: clamp(1.25rem, 4vw, 4rem);
+  }
+
+  /* The small mono kicker used above headings */
+  .kicker {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--color-mist);
+  }
+
+  .font-data {
+    font-family: var(--font-mono);
+    font-variant-numeric: tabular-nums;
+    letter-spacing: -0.01em;
+  }
+
+  /* The signature pop gradient + chrome gradient */
+  .grad-pop {
+    background-image: linear-gradient(
+      110deg,
+      var(--color-lime),
+      var(--color-cyan) 38%,
+      var(--color-magenta) 70%,
+      var(--color-tangerine)
+    );
+  }
+  .grad-chrome {
+    background-image: linear-gradient(
+      180deg,
+      #ffffff 0%,
+      #d8dde4 28%,
+      #9aa0ab 52%,
+      #eef1f5 70%,
+      #7e848f 100%
+    );
+  }
+
+  .text-gradient {
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+  }
+
+  /* Hairline border helpers */
+  .ring-line {
+    box-shadow: inset 0 0 0 1px var(--color-line);
+  }
+
+  /* Glass panel */
+  .glass {
+    background: rgba(20, 20, 28, 0.55);
+    backdrop-filter: blur(18px) saturate(140%);
+    -webkit-backdrop-filter: blur(18px) saturate(140%);
+    box-shadow: inset 0 0 0 1px var(--color-line);
+  }
+
+  /* Soft radial glow background helper */
+  .bloom {
+    background: radial-gradient(
+      60% 60% at 50% 40%,
+      rgba(56, 232, 255, 0.16),
+      transparent 70%
+    );
+  }
+
+  /* Section vertical rhythm */
+  .section-pad {
+    padding-block: clamp(6rem, 14vh, 12rem);
+  }
+
+  .edge-mask-y {
+    -webkit-mask-image: linear-gradient(
+      to bottom,
+      transparent,
+      black 12%,
+      black 88%,
+      transparent
+    );
+    mask-image: linear-gradient(
+      to bottom,
+      transparent,
+      black 12%,
+      black 88%,
+      transparent
+    );
+  }
+
+  .will-fx {
+    will-change: transform, opacity;
+  }
+}
+
+/* ============================================================
+   Film grain overlay (applied to a fixed element in App)
+   ============================================================ */
+.grain-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  pointer-events: none;
+  opacity: 0.05;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* ============================================================
+   Accessibility — reduced motion
+   ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+  .grain-overlay {
+    display: none;
+  }
+}
