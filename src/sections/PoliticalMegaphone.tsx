@@ -90,7 +90,7 @@ function PowerIndicator({
         <span>Everyone</span>
       </div>
       <div
-        className="relative h-2 w-full overflow-hidden rounded-full bg-white/10"
+        className="relative h-2 w-full overflow-hidden rounded-full bg-ink/10"
         aria-hidden
       >
         <motion.div
@@ -146,7 +146,7 @@ export function PoliticalMegaphone() {
   return (
     <section
       id="politics-viz"
-      className="relative flex min-h-screen items-center overflow-hidden section-pad"
+      className="relative flex min-h-screen items-center overflow-hidden border-t border-line bg-abyss section-pad"
       aria-labelledby="politics-viz-heading"
     >
       {/* soft cobalt wash */}
@@ -155,7 +155,7 @@ export function PoliticalMegaphone() {
         className="pointer-events-none absolute inset-0"
         style={{
           background:
-            'radial-gradient(46% 40% at 26% 36%, rgba(67,102,255,0.10), transparent 70%)',
+            'radial-gradient(46% 40% at 26% 36%, rgba(44,69,200,0.05), transparent 70%)',
         }}
       />
 
@@ -227,15 +227,15 @@ export function PoliticalMegaphone() {
                     className={cn(
                       'group relative flex items-baseline gap-4 rounded-xl border px-5 py-4 text-left transition-colors',
                       selected
-                        ? 'border-cobalt/60 bg-cobalt/[0.08]'
-                        : 'border-line bg-white/[0.015] hover:border-line-strong hover:bg-white/[0.03]',
+                        ? 'border-line-strong bg-surface'
+                        : 'border-line bg-surface-2 hover:border-line-strong hover:bg-surface',
                     )}
                   >
                     {/* active rail */}
                     <span
                       aria-hidden
                       className={cn(
-                        'absolute left-0 top-1/2 h-7 w-[3px] -translate-y-1/2 rounded-full bg-cobalt transition-opacity',
+                        'absolute inset-x-5 bottom-0 h-0.5 bg-ink transition-opacity',
                         selected ? 'opacity-100' : 'opacity-0',
                       )}
                     />
@@ -250,8 +250,8 @@ export function PoliticalMegaphone() {
                     <span className="flex flex-col">
                       <span
                         className={cn(
-                          'font-display text-xl font-semibold leading-tight transition-colors',
-                          selected ? 'text-ink' : 'text-mist',
+                          'self-start font-display text-xl font-semibold leading-tight transition-colors',
+                          selected ? 'mark text-ink' : 'text-mist',
                         )}
                       >
                         {s.who}
@@ -266,7 +266,7 @@ export function PoliticalMegaphone() {
             </div>
 
             {/* power indicator */}
-            <div className="rounded-xl border border-line bg-white/[0.02] p-5">
+            <div className="rounded-xl border border-line bg-surface-2 p-5">
               <p className="mb-3 font-mono text-[0.6rem] uppercase tracking-[0.24em] text-faint">
                 Who holds the power
               </p>
@@ -292,9 +292,15 @@ export function PoliticalMegaphone() {
             <div className="relative">
               <div
                 aria-hidden
-                className="pointer-events-none absolute -inset-6 -z-10 rounded-[2rem] bg-[radial-gradient(circle_at_50%_35%,rgba(67,102,255,0.16),transparent_65%)] blur-2xl"
+                className="pointer-events-none absolute -inset-6 -z-10 rounded-[2rem] bg-[radial-gradient(circle_at_50%_35%,rgba(44,69,200,0.07),transparent_65%)] blur-2xl"
               />
-              <div className="relative mx-auto aspect-[16/10] w-full max-w-[46rem] overflow-hidden rounded-2xl ring-1 ring-line-strong">
+              <div
+                className="relative mx-auto aspect-[16/10] w-full max-w-[46rem] overflow-hidden rounded-2xl bg-surface"
+                style={{
+                  boxShadow:
+                    'inset 0 0 0 1px var(--color-line), 0 1px 2px rgba(28,27,23,0.05), 0 16px 40px -24px rgba(28,27,23,0.25)',
+                }}
+              >
                 <AnimatePresence mode="wait" initial={false}>
                   <motion.div
                     key={step.id}

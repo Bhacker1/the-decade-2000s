@@ -43,7 +43,7 @@ export function Cursor() {
         animate={{
           width: hot ? 46 : 22,
           height: hot ? 46 : 22,
-          backgroundColor: hot ? 'rgba(214,255,59,0.12)' : 'rgba(214,255,59,0)',
+          backgroundColor: hot ? 'rgba(214,255,59,0.35)' : 'rgba(214,255,59,0)',
         }}
         transition={{ type: 'spring', stiffness: 350, damping: 28 }}
       />

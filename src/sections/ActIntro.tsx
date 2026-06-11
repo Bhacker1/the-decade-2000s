@@ -12,13 +12,6 @@ const ACCENT_TEXT: Record<string, string> = {
   magenta: 'text-magenta',
   cyan: 'text-cyan',
 }
-const ACCENT_HEX: Record<string, string> = {
-  cobalt: '67,102,255',
-  tangerine: '255,122,24',
-  magenta: '255,46,154',
-  cyan: '56,232,255',
-}
-
 const EASE = [0.16, 1, 0.3, 1] as const
 
 export interface ActIntroProps {
@@ -37,7 +30,6 @@ export function ActIntro({ lensId, sectionId }: ActIntroProps) {
   const ref = useRef<HTMLElement>(null)
 
   const accentText = ACCENT_TEXT[lens.accent] ?? 'text-acid'
-  const hex = ACCENT_HEX[lens.accent] ?? '214,255,59'
 
   // Three facts — prefer the ones carrying a headline number.
   const facts = [...lens.items]
@@ -49,23 +41,15 @@ export function ActIntro({ lensId, sectionId }: ActIntroProps) {
       id={sectionId}
       ref={ref}
       aria-label={`Force ${lens.numeral} — ${lens.label}`}
-      className="relative flex min-h-screen items-center overflow-hidden section-pad"
+      className="relative flex min-h-screen items-center overflow-hidden border-t border-line section-pad"
     >
       {/* Oversized, very faint backdrop numeral */}
       <span
         aria-hidden
-        className="pointer-events-none absolute right-[clamp(-1rem,2vw,3rem)] top-1/2 -translate-y-1/2 select-none font-display text-[42vh] font-semibold leading-none text-white/[0.035]"
+        className="pointer-events-none absolute right-[clamp(-1rem,2vw,3rem)] top-1/2 -translate-y-1/2 select-none font-display text-[42vh] font-semibold leading-none text-ink/[0.035]"
       >
         {lens.numeral}
       </span>
-      {/* Soft accent wash */}
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-0"
-        style={{
-          background: `radial-gradient(48% 42% at 28% 42%, rgba(${hex},0.10), transparent 70%)`,
-        }}
-      />
 
       <div className="u-container relative">
         {/* kicker */}
@@ -92,7 +76,7 @@ export function ActIntro({ lensId, sectionId }: ActIntroProps) {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true, margin: '-15% 0px' }}
           transition={{ duration: 0.85, delay: 0.1, ease: EASE }}
-          className="mt-6 max-w-[46ch] text-lg leading-relaxed text-mist sm:text-xl"
+          className="measure mt-6 text-lg leading-relaxed text-mist sm:text-xl"
         >
           {lens.tagline}
         </motion.p>

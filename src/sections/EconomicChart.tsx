@@ -10,8 +10,9 @@ import { NASDAQ_ARC } from '@/lib/content'
    One accent: tangerine.
    ================================================================== */
 
-// Tangerine, as literal values for SVG stroke / glow.
-const TANGERINE = 'rgb(255, 122, 24)'
+// Tangerine (--color-tangerine) as a literal — SVG presentation
+// attributes don't resolve var().
+const TANGERINE = '#a84300'
 
 // Chart viewBox geometry. Generous padding so dot labels never clip.
 const VB = { w: 1000, h: 560 }
@@ -42,6 +43,9 @@ function yAt(value: number): number {
 // First peak above, the two troughs below, the highs above.
 const LABEL_BELOW = [false, true, false, true, false]
 
+// The two crash annotations carry magenta print ink; booms stay tangerine.
+const CRASH_POINT = [false, true, false, true, false]
+
 export function EconomicChart() {
   const reduced = useReducedMotion()
   const chartRef = useRef<HTMLDivElement>(null)
@@ -56,6 +60,7 @@ export function EconomicChart() {
         x: xAt(i),
         y: yAt(p.value),
         below: LABEL_BELOW[i],
+        crash: CRASH_POINT[i],
       })),
     [],
   )
@@ -86,13 +91,13 @@ export function EconomicChart() {
   return (
     <section
       id="economy-viz"
-      className="relative overflow-hidden bg-void"
+      className="relative overflow-hidden border-t border-line bg-abyss"
       aria-labelledby="economy-viz-heading"
     >
-      {/* ambient tangerine bloom */}
+      {/* ambient tangerine wash */}
       <div
         aria-hidden
-        className="pointer-events-none absolute left-1/2 top-1/3 -z-0 h-[70vmin] w-[80vmin] -translate-x-1/2 rounded-full bg-[radial-gradient(circle,rgba(255,122,24,0.10),transparent_62%)] blur-3xl"
+        className="pointer-events-none absolute left-1/2 top-1/3 -z-0 h-[70vmin] w-[80vmin] -translate-x-1/2 rounded-full bg-[radial-gradient(circle,rgba(168,67,0,0.07),transparent_62%)] blur-3xl"
       />
 
       <div className="section-pad u-container relative">
@@ -114,7 +119,7 @@ export function EconomicChart() {
         {/* ---- the chart ---- */}
         <div ref={chartRef} className="relative">
           {/* horizontal scroll on small screens so labels stay legible */}
-          <div className="-mx-[clamp(1.25rem,5vw,5rem)] overflow-x-auto px-[clamp(1.25rem,5vw,5rem)] pb-2 sm:mx-0 sm:px-0">
+          <div className="lift -mx-[clamp(1.25rem,5vw,5rem)] overflow-x-auto rounded-2xl border border-line bg-surface px-[clamp(1.25rem,5vw,5rem)] pb-2 sm:mx-0 sm:px-0">
             <div className="min-w-[680px] sm:min-w-0">
               <svg
                 viewBox={`0 0 ${VB.w} ${VB.h}`}
@@ -125,8 +130,8 @@ export function EconomicChart() {
               >
                 <defs>
                   <linearGradient id="econ-area" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="0%" stopColor={TANGERINE} stopOpacity="0.34" />
-                    <stop offset="55%" stopColor={TANGERINE} stopOpacity="0.1" />
+                    <stop offset="0%" stopColor={TANGERINE} stopOpacity="0.1" />
+                    <stop offset="55%" stopColor={TANGERINE} stopOpacity="0.04" />
                     <stop offset="100%" stopColor={TANGERINE} stopOpacity="0" />
                   </linearGradient>
                   <filter
@@ -145,7 +150,7 @@ export function EconomicChart() {
                 </defs>
 
                 {/* faint baseline + gridlines */}
-                <g aria-hidden stroke="rgba(255,255,255,0.07)" strokeWidth="1">
+                <g aria-hidden stroke="rgba(28,27,23,0.08)" strokeWidth="1">
                   {grid.map((gy) => (
                     <line key={gy} x1={PAD.left} y1={gy} x2={VB.w - PAD.right} y2={gy} />
                   ))}
@@ -156,7 +161,7 @@ export function EconomicChart() {
                   y1={VB.h - PAD.bottom}
                   x2={VB.w - PAD.right}
                   y2={VB.h - PAD.bottom}
-                  stroke="rgba(255,255,255,0.16)"
+                  stroke="rgba(28,27,23,0.3)"
                   strokeWidth="1"
                 />
 
@@ -183,7 +188,6 @@ export function EconomicChart() {
                   strokeWidth="3.5"
                   strokeLinecap="round"
                   strokeLinejoin="round"
-                  filter="url(#econ-glow)"
                   initial={lineAnim.initial}
                   animate={lineAnim.animate}
                   transition={
@@ -208,7 +212,7 @@ export function EconomicChart() {
                         y1={p.y}
                         x2={p.x}
                         y2={p.below ? p.y + 18 : p.y - 14}
-                        stroke="rgba(255,255,255,0.18)"
+                        stroke="rgba(28,27,23,0.28)"
                         strokeWidth="1"
                         initial={{ opacity: 0 }}
                         animate={{ opacity: draw ? 1 : 0 }}
@@ -220,7 +224,7 @@ export function EconomicChart() {
                         cx={p.x}
                         cy={p.y}
                         r="6.5"
-                        fill="#060609"
+                        fill="#ffffff"
                         stroke={TANGERINE}
                         strokeWidth="3"
                         initial={{ scale: 0, opacity: 0 }}
@@ -247,7 +251,7 @@ export function EconomicChart() {
                           x={p.x}
                           y={labelY}
                           textAnchor="middle"
-                          className="fill-mist font-mono"
+                          className={p.crash ? 'fill-magenta font-mono' : 'fill-mist font-mono'}
                           style={{
                             fontSize: '17px',
                             letterSpacing: '0.04em',
@@ -259,7 +263,7 @@ export function EconomicChart() {
                           x={p.x}
                           y={valueY}
                           textAnchor="middle"
-                          className="fill-tangerine font-data"
+                          className={p.crash ? 'fill-magenta font-data' : 'fill-tangerine font-data'}
                           style={{ fontSize: '26px', fontWeight: 600 }}
                         >
                           {p.value.toLocaleString()}

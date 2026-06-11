@@ -13,8 +13,8 @@ import { cn } from '@/lib/cn'
 /* ============================================================
    THE DECADE · Hero — the curtain-raiser.
    Massive kinetic "THE DECADE" title with a masked per-line
-   reveal, a slow morphing pop-gradient atmosphere, a faint
-   CRT/early-web grid + scanlines, and a scroll-driven parallax
+   reveal, a slow morphing marker-wash atmosphere, a faint
+   early-web grid + ink pinstripes, and a scroll-driven parallax
    exit that reads like a camera pulling away.
    ============================================================ */
 
@@ -105,7 +105,7 @@ export function Hero() {
           className="pointer-events-none absolute inset-0"
           aria-hidden
         >
-          {/* Morphing pop-gradient blob */}
+          {/* Morphing marker-wash blob */}
           <motion.div
             style={{
               y: sv(blobY, '0%'),
@@ -114,8 +114,12 @@ export function Hero() {
             className="absolute inset-0"
           >
             <motion.div
-              className="grad-pop absolute left-1/2 top-1/2 h-[78vmin] w-[78vmin] -translate-x-1/2 -translate-y-1/2 rounded-full opacity-[0.55] will-fx"
-              style={{ filter: 'blur(90px)' }}
+              className="absolute left-1/2 top-1/2 h-[78vmin] w-[78vmin] -translate-x-1/2 -translate-y-1/2 rounded-full will-fx"
+              style={{
+                background:
+                  'radial-gradient(circle, rgba(214,255,59,0.22), transparent 65%)',
+                filter: 'blur(90px)',
+              }}
               animate={
                 reduceMotion || !atmosphereInView
                   ? undefined
@@ -143,7 +147,7 @@ export function Hero() {
               className="absolute left-[28%] top-[62%] h-[44vmin] w-[44vmin] -translate-x-1/2 -translate-y-1/2 rounded-full opacity-40 will-fx"
               style={{
                 background:
-                  'radial-gradient(circle, var(--color-cyan), transparent 68%)',
+                  'radial-gradient(circle, rgba(0,109,124,0.45), transparent 68%)',
                 filter: 'blur(70px)',
               }}
               animate={
@@ -161,7 +165,7 @@ export function Hero() {
               className="absolute right-[24%] top-[30%] h-[40vmin] w-[40vmin] translate-x-1/2 -translate-y-1/2 rounded-full opacity-40 will-fx"
               style={{
                 background:
-                  'radial-gradient(circle, var(--color-magenta), transparent 68%)',
+                  'radial-gradient(circle, rgba(184,13,98,0.45), transparent 68%)',
                 filter: 'blur(72px)',
               }}
               animate={
@@ -177,12 +181,12 @@ export function Hero() {
             />
           </motion.div>
 
-          {/* Vignette to seat the type in darkness */}
+          {/* Vignette to seat the type in light */}
           <div
             className="absolute inset-0"
             style={{
               background:
-                'radial-gradient(120% 100% at 50% 42%, transparent 38%, rgba(6,6,9,0.55) 72%, var(--color-void) 100%)',
+                'radial-gradient(120% 100% at 50% 42%, transparent 38%, rgba(250,247,240,0.55) 72%, var(--color-void) 100%)',
             }}
           />
 
@@ -198,7 +202,7 @@ export function Hero() {
               className="absolute inset-[-20%]"
               style={{
                 backgroundImage:
-                  'linear-gradient(to right, rgba(214,255,59,0.07) 1px, transparent 1px), linear-gradient(to bottom, rgba(214,255,59,0.07) 1px, transparent 1px)',
+                  'linear-gradient(to right, rgba(28,27,23,0.06) 1px, transparent 1px), linear-gradient(to bottom, rgba(28,27,23,0.06) 1px, transparent 1px)',
                 backgroundSize: '64px 64px',
                 maskImage:
                   'radial-gradient(80% 70% at 50% 45%, black, transparent 78%)',
@@ -212,12 +216,12 @@ export function Hero() {
             />
           </motion.div>
 
-          {/* Scanlines — faint CRT texture */}
+          {/* Scanlines — faint ink pinstripes */}
           <div
-            className="absolute inset-0 opacity-[0.16] mix-blend-overlay"
+            className="absolute inset-0"
             style={{
               backgroundImage:
-                'repeating-linear-gradient(to bottom, rgba(255,255,255,0.5) 0px, rgba(255,255,255,0.5) 1px, transparent 1px, transparent 4px)',
+                'repeating-linear-gradient(to bottom, rgba(28,27,23,0.04) 0 1px, transparent 1px 6px)',
             }}
           />
 
@@ -227,7 +231,7 @@ export function Hero() {
               className="absolute inset-x-0 h-[18vh]"
               style={{
                 background:
-                  'linear-gradient(to bottom, transparent, rgba(56,232,255,0.06), transparent)',
+                  'linear-gradient(to bottom, transparent, rgba(0,109,124,0.04), transparent)',
               }}
               animate={{ top: ['-20%', '120%'] }}
               transition={{
@@ -299,7 +303,7 @@ export function Hero() {
               className="mt-7 max-w-[34ch] text-balance font-display text-big font-light leading-tight text-mist sm:mt-9"
             >
               When technology{' '}
-              <span className="text-ink">exploded.</span>
+              <span className="mark text-ink">exploded.</span>
             </motion.p>
 
             {/* Mono sub */}

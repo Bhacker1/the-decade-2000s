@@ -1,49 +1,65 @@
 @import 'tailwindcss';
 
 /* ============================================================
-   THE DECADE · Design System
-   Dark editorial precision meets 2000s pop-chrome energy.
+   THE DECADE · Design System — LIGHT
+   Swiss paper editorial meets 2000s pop-print energy.
+   A school report printed like a gallery catalogue: warm paper,
+   warm near-black ink, hairline rules, deep "spot print ink"
+   accents — and the original acid lime surviving as a literal
+   highlighter marker (graphic only).
    ============================================================ */
 
 @theme {
-  /* ---- Surfaces (near-black, faint cool cast) ---- */
-  --color-void: #060609;
-  --color-abyss: #0a0a11;
-  --color-surface: #101019;
-  --color-surface-2: #16161f;
-  --color-line: rgba(255, 255, 255, 0.09);
-  --color-line-strong: rgba(255, 255, 255, 0.16);
+  /* ---- Surfaces — paper depth ladder (names kept as ROLES)
+     void   = page base (warm paper)
+     abyss  = recessed well / full-bleed tint band
+     surface = lifted white sheet (cards, panels, device mats)
+     surface-2 = inset fill ON a sheet (rows, tab strips, hovers) ---- */
+  --color-void: #faf7f0;
+  --color-abyss: #f2eee3;
+  --color-surface: #ffffff;
+  --color-surface-2: #f6f3ea;
+  --color-line: rgba(28, 27, 23, 0.14);
+  --color-line-strong: rgba(28, 27, 23, 0.3);
 
-  /* ---- Ink ---- */
-  --color-ink: #f6f6f3;
-  --color-mist: #a2a2af;
-  --color-faint: #828292;
+  /* ---- Ink (warm near-black + two grays; all AA on every surface) ---- */
+  --color-ink: #1c1b17;   /* 17.2:1 on white */
+  --color-mist: #54524a;  /* 7.8:1 — supporting copy, kickers */
+  --color-faint: #67645a; /* 5.9:1 — captions, metadata, axis labels */
 
-  /* ---- Aluminum / chrome (Apple homage) ---- */
-  --color-chrome: #d6dae1;
-  --color-steel: #9aa0ab;
+  /* ---- Aluminum → graphite (Apple homage, text-safe) ---- */
+  --color-chrome: #54585f; /* 7.2:1 */
+  --color-steel: #5c636b;  /* 6.1:1 */
 
-  /* ---- 2000s iPod-ad pop accents ---- */
-  --color-acid: #d6ff3b;
-  --color-lime: #b6ff2e;
-  --color-cyan: #38e8ff;
-  --color-magenta: #ff2e9a;
-  --color-tangerine: #ff7a18;
-  --color-cobalt: #4366ff;
-  --color-grape: #a855f7;
+  /* ---- 2000s pop accents — re-pitched as deep print inks.
+     EVERY token passes 4.5:1 as text, even on abyss (worst case).
+     content.ts may emit any of these as text classes — all safe. ---- */
+  --color-acid: #5d6b00;      /* was #d6ff3b — signature text accent */
+  --color-lime: #3c7a00;      /* was #b6ff2e */
+  --color-cyan: #006d7c;      /* was #38e8ff */
+  --color-magenta: #b80d62;   /* was #ff2e9a */
+  --color-tangerine: #a84300; /* was #ff7a18 */
+  --color-cobalt: #2c45c8;    /* was #4366ff */
+  --color-grape: #7227c9;     /* was #a855f7 */
 
-  /* ---- Typography ---- */
+  /* ---- The highlighter itself. GRAPHIC ONLY — never text (1.15:1).
+     The original signature hex, preserved as the marker:
+     ::selection, .mark swipes, hero/iPhone marker washes,
+     Cursor hot fill. ---- */
+  --color-marker: #d6ff3b;
+
+  /* ---- Typography (unchanged) ---- */
   --font-display: 'Space Grotesk', ui-sans-serif, system-ui, sans-serif;
   --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
   --font-mono: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace;
 
-  /* ---- Fluid display scale ---- */
+  /* ---- Fluid display scale (unchanged) ---- */
   --text-mega: clamp(3rem, 13vw, 13rem);
   --text-giant: clamp(2.5rem, 9vw, 8rem);
   --text-huge: clamp(2rem, 6vw, 5rem);
   --text-big: clamp(1.6rem, 4vw, 3.25rem);
 
-  /* ---- Easing ---- */
+  /* ---- Easing (unchanged) ---- */
   --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
   --ease-in-out-quint: cubic-bezier(0.83, 0, 0.17, 1);
 }
@@ -81,13 +97,13 @@ body {
   background: var(--color-void);
   color: var(--color-ink);
   font-family: var(--font-sans);
-  font-size: clamp(15px, 1.05vw, 18px);
-  line-height: 1.6;
-  letter-spacing: 0.01em;
+  font-size: clamp(16px, 1.05vw, 19px);
+  line-height: 1.65;
+  letter-spacing: 0; /* dark-on-light needs no halation compensation */
   overflow-x: clip;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
   font-synthesis: none;
+  /* NOTE: -webkit-font-smoothing: antialiased intentionally removed —
+     it thins dark glyphs on light; subpixel keeps full text weight. */
 }
 
 h1,
@@ -127,18 +143,20 @@ canvas {
   max-width: 100%;
 }
 
+/* The lime highlighter, doing its actual job */
 ::selection {
-  background: var(--color-acid);
-  color: #07070b;
+  background: var(--color-marker);
+  color: var(--color-ink);
 }
 
+/* Ink ring on paper — >= 14:1 on every surface, unambiguous */
 :focus-visible {
-  outline: 2px solid var(--color-acid);
+  outline: 2px solid var(--color-ink);
   outline-offset: 3px;
   border-radius: 2px;
 }
 
-/* Scrollbar */
+/* Scrollbar — warm paper grays */
 ::-webkit-scrollbar {
   width: 9px;
   height: 9px;
@@ -147,12 +165,12 @@ canvas {
   background: var(--color-void);
 }
 ::-webkit-scrollbar-thumb {
-  background: #26262f;
+  background: #cfc9ba;
   border-radius: 99px;
   border: 2px solid var(--color-void);
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #34343f;
+  background: #b3ac9a;
 }
 
 /* ============================================================
@@ -173,12 +191,19 @@ canvas {
     padding-inline: clamp(1.25rem, 4vw, 4rem);
   }
 
-  /* The small mono kicker used above headings */
+  /* Reading measure — apply to every running paragraph */
+  .measure {
+    max-width: 62ch;
+  }
+
+  /* The small mono kicker used above headings —
+     size up a hair, tracking eased: tiny wide-tracked gray mono
+     is the first thing to die on white */
   .kicker {
     font-family: var(--font-mono);
-    font-size: 0.72rem;
+    font-size: 0.75rem;
     font-weight: 500;
-    letter-spacing: 0.32em;
+    letter-spacing: 0.28em;
     text-transform: uppercase;
     color: var(--color-mist);
   }
@@ -189,7 +214,8 @@ canvas {
     letter-spacing: -0.01em;
   }
 
-  /* The signature pop gradient + chrome gradient */
+  /* Signature pop gradient — now four print inks; lightest stop
+     (lime, 5.3:1) clears AA, so gradient TEXT is legal at any size */
   .grad-pop {
     background-image: linear-gradient(
       110deg,
@@ -199,14 +225,17 @@ canvas {
       var(--color-tangerine)
     );
   }
+
+  /* Aluminum becomes etched graphite — every stop >= 3:1.
+     As gradient TEXT: display sizes (>= 24px) only. */
   .grad-chrome {
     background-image: linear-gradient(
       180deg,
-      #ffffff 0%,
-      #d8dde4 28%,
-      #9aa0ab 52%,
-      #eef1f5 70%,
-      #7e848f 100%
+      #3a3d42 0%,
+      #5c636b 28%,
+      #7f848c 52%,
+      #44484e 70%,
+      #6a6f77 100%
     );
   }
 
@@ -222,21 +251,42 @@ canvas {
     box-shadow: inset 0 0 0 1px var(--color-line);
   }
 
-  /* Glass panel */
+  /* Glass panel — a frosted white sheet over paper */
   .glass {
-    background: rgba(20, 20, 28, 0.55);
-    backdrop-filter: blur(18px) saturate(140%);
-    -webkit-backdrop-filter: blur(18px) saturate(140%);
-    box-shadow: inset 0 0 0 1px var(--color-line);
+    background: rgba(255, 255, 255, 0.72);
+    backdrop-filter: blur(14px) saturate(120%);
+    -webkit-backdrop-filter: blur(14px) saturate(120%);
+    box-shadow:
+      inset 0 0 0 1px var(--color-line),
+      0 1px 2px rgba(28, 27, 23, 0.05),
+      0 12px 32px -16px rgba(28, 27, 23, 0.18);
   }
 
-  /* Soft radial glow background helper */
+  /* Canonical elevation for sheets, device frames, chart panels —
+     the light theme's replacement for glow box-shadows */
+  .lift {
+    box-shadow:
+      0 1px 2px rgba(28, 27, 23, 0.05),
+      0 16px 40px -24px rgba(28, 27, 23, 0.25);
+  }
+
+  /* Glow becomes a watercolor wash — same hook, paper physics */
   .bloom {
     background: radial-gradient(
       60% 60% at 50% 40%,
-      rgba(56, 232, 255, 0.16),
+      rgba(0, 109, 124, 0.07),
       transparent 70%
     );
+  }
+
+  /* Highlighter swiped behind text (graphic use of --color-marker) */
+  .mark {
+    background-image: linear-gradient(var(--color-marker), var(--color-marker));
+    background-size: 100% 0.55em;
+    background-position: 0 78%;
+    background-repeat: no-repeat;
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
   }
 
   /* Section vertical rhythm */
@@ -267,15 +317,18 @@ canvas {
 }
 
 /* ============================================================
-   Film grain overlay (applied to a fixed element in App)
+   Paper grain overlay (applied to a fixed element in App)
+   Film grain (overlay blend) becomes paper tooth: multiply
+   darkens micro-texture into the sheet instead of sparkling.
+   At 0.04 it sells the paper material for ~0 cost.
    ============================================================ */
 .grain-overlay {
   position: fixed;
   inset: 0;
   z-index: 60;
   pointer-events: none;
-  opacity: 0.05;
-  mix-blend-mode: overlay;
+  opacity: 0.04;
+  mix-blend-mode: multiply;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 

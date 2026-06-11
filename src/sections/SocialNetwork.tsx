@@ -39,14 +39,14 @@ export function SocialNetwork() {
   const show = reduced ? true : inView
 
   return (
-    <section id="social-viz" className="section-pad relative overflow-hidden">
+    <section id="social-viz" className="section-pad relative overflow-hidden border-t border-line bg-abyss">
       {/* ambient magenta wash */}
       <div
         aria-hidden
         className="pointer-events-none absolute inset-0"
         style={{
           background:
-            'radial-gradient(55% 50% at 50% 46%, rgba(255,46,154,0.14), transparent 72%)',
+            'radial-gradient(55% 50% at 50% 46%, rgba(184,13,98,0.06), transparent 72%)',
         }}
       />
 
@@ -85,7 +85,7 @@ export function SocialNetwork() {
                   y1={from.y}
                   x2={to.x}
                   y2={to.y}
-                  stroke="#ff2e9a"
+                  stroke={lit ? 'var(--color-magenta)' : 'rgba(28,27,23,0.8)'}
                   strokeWidth={0.3}
                   strokeLinecap="round"
                   vectorEffect="non-scaling-stroke"
@@ -157,7 +157,7 @@ export function SocialNetwork() {
           <Counter
             value={500}
             suffix="M"
-            className="text-giant font-display font-semibold leading-none text-magenta"
+            className="mark text-giant font-display font-semibold leading-none text-ink"
           />
           <p className="mt-4 max-w-xs text-mist">people on Facebook by 2010</p>
         </div>
@@ -200,7 +200,7 @@ function NodeTile({ node, dim, onActivate }: NodeTileProps) {
         className="grid h-16 w-16 place-items-center rounded-2xl font-display text-2xl font-semibold text-ink ring-line transition-transform duration-300 group-hover:scale-110 group-focus-visible:scale-110 sm:h-20 sm:w-20 sm:text-3xl"
         style={{
           background: `linear-gradient(155deg, ${node.hue}, ${node.hue}33)`,
-          boxShadow: `0 0 28px -6px ${node.hue}, inset 0 0 0 1px rgba(255,255,255,0.14)`,
+          boxShadow: `0 0 0 4px ${node.hue}26, inset 0 0 0 1px rgba(28,27,23,0.10)`,
         }}
       >
         {node.glyph}

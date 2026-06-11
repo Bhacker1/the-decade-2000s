@@ -47,7 +47,7 @@ export function Finale() {
     <section
       id="finale"
       ref={sectionRef}
-      className="relative overflow-hidden bg-void"
+      className="relative overflow-hidden border-t border-line bg-void"
     >
       {/* Ambient closing bloom — warm, settling, never loud. */}
       <div
@@ -55,7 +55,7 @@ export function Finale() {
         className="pointer-events-none absolute inset-0 -z-10"
         style={{
           background:
-            'radial-gradient(120% 70% at 50% -6%, rgba(214,255,59,0.07), transparent 55%), radial-gradient(90% 80% at 84% 30%, rgba(56,232,255,0.06), transparent 60%), radial-gradient(90% 80% at 12% 64%, rgba(255,46,154,0.05), transparent 62%)',
+            'radial-gradient(120% 70% at 50% -6%, rgba(93,107,0,0.06), transparent 55%), radial-gradient(90% 80% at 84% 30%, rgba(0,109,124,0.03), transparent 60%), radial-gradient(90% 80% at 12% 64%, rgba(184,13,98,0.02), transparent 62%)',
         }}
       />
 
@@ -83,7 +83,7 @@ export function Finale() {
           </Reveal>
 
           <Reveal delay={0.12}>
-            <p className="mt-7 max-w-xl text-balance text-base leading-relaxed text-mist sm:text-lg">
+            <p className="measure mt-7 text-balance text-base leading-relaxed text-mist sm:text-lg">
               Bigger than a phone, lighter than a laptop — the iPad turned
               software into something you could hold like a magazine. And
               Instagram, born for the camera already in your pocket, closed the
@@ -159,7 +159,7 @@ function IpadDevice({ reduceMotion }: { reduceMotion: boolean }) {
           className="absolute inset-0 -z-10 blur-3xl"
           style={{
             background:
-              'radial-gradient(60% 55% at 50% 45%, rgba(67,102,255,0.22), transparent 70%)',
+              'radial-gradient(60% 55% at 50% 45%, rgba(44,69,200,0.10), transparent 70%)',
           }}
         />
 
@@ -178,7 +178,7 @@ function IpadDevice({ reduceMotion }: { reduceMotion: boolean }) {
               background:
                 'linear-gradient(150deg, #e9edf2 0%, #b9bfca 26%, #d6dbe2 52%, #8e949f 78%, #c3c9d2 100%)',
               boxShadow:
-                '0 40px 90px -30px rgba(0,0,0,0.8), 0 10px 30px -12px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.6), inset 0 -2px 6px rgba(0,0,0,0.28)',
+                '0 30px 60px -28px rgba(28,27,23,0.38), inset 0 1px 0 rgba(255,255,255,0.6), inset 0 -2px 6px rgba(0,0,0,0.28)',
             }}
           >
             {/* Glossy edge sheen */}
@@ -235,7 +235,7 @@ function IpadDevice({ reduceMotion }: { reduceMotion: boolean }) {
           className="mx-auto mt-2 h-10 w-[72%] rounded-full"
           style={{
             background:
-              'radial-gradient(60% 100% at 50% 0%, rgba(0,0,0,0.5), transparent 75%)',
+              'radial-gradient(60% 100% at 50% 0%, rgba(28,27,23,0.35), transparent 75%)',
             filter: 'blur(6px)',
           }}
         />
@@ -249,11 +249,11 @@ function IpadScreen({ reduceMotion }: { reduceMotion: boolean }) {
   return (
     <div className="flex h-full w-full flex-col bg-[#0d0d13]">
       {/* status bar */}
-      <div className="flex items-center justify-between px-[6%] pt-[4%] text-[clamp(0.42rem,1.7vw,0.6rem)] text-mist">
+      <div className="flex items-center justify-between px-[6%] pt-[4%] text-[clamp(0.42rem,1.7vw,0.6rem)] text-[#a2a2af]">
         <span className="font-data tracking-tight">9:41</span>
-        <span className="kicker text-[0.85em] text-faint">A New Canvas</span>
+        <span className="kicker text-[0.85em] text-[#828292]">A New Canvas</span>
         <span className="flex items-center gap-1" aria-hidden>
-          <span className="block h-[0.7em] w-[0.5em] rounded-[1px] bg-mist/70" />
+          <span className="block h-[0.7em] w-[0.5em] rounded-[1px] bg-[#a2a2af]/70" />
           <span className="font-data">100%</span>
         </span>
       </div>
@@ -294,11 +294,11 @@ function IpadScreen({ reduceMotion }: { reduceMotion: boolean }) {
 
       {/* headline + text columns (magazine layout) */}
       <div className="mt-[5%] px-[6%]">
-        <div className="kicker text-[clamp(0.34rem,1.4vw,0.5rem)] text-acid">
+        <div className="kicker text-[clamp(0.34rem,1.4vw,0.5rem)] text-[#d6ff3b]">
           2010 · The Edition
         </div>
-        <div className="mt-[3%] h-[clamp(3px,1.1vw,5px)] w-[78%] rounded-full bg-ink/85" />
-        <div className="mt-[3%] h-[clamp(3px,1.1vw,5px)] w-[55%] rounded-full bg-ink/55" />
+        <div className="mt-[3%] h-[clamp(3px,1.1vw,5px)] w-[78%] rounded-full bg-[#f6f6f3]/85" />
+        <div className="mt-[3%] h-[clamp(3px,1.1vw,5px)] w-[55%] rounded-full bg-[#f6f6f3]/55" />
       </div>
 
       <div className="mt-[5%] grid flex-1 grid-cols-2 gap-[5%] px-[6%] pb-[6%]">
@@ -307,7 +307,7 @@ function IpadScreen({ reduceMotion }: { reduceMotion: boolean }) {
             {Array.from({ length: 6 }).map((_, i) => (
               <div
                 key={i}
-                className="h-[clamp(2px,0.7vw,3px)] rounded-full bg-mist/25"
+                className="h-[clamp(2px,0.7vw,3px)] rounded-full bg-[#a2a2af]/25"
                 style={{ width: `${92 - ((i + col) % 4) * 14}%` }}
               />
             ))}
@@ -353,7 +353,7 @@ function MilestoneCard({
       {/* corner glow on hover */}
       <span
         aria-hidden
-        className="pointer-events-none absolute -right-10 -top-10 h-32 w-32 rounded-full opacity-0 blur-2xl transition-opacity duration-500 group-hover:opacity-30"
+        className="pointer-events-none absolute -right-10 -top-10 h-32 w-32 rounded-full opacity-0 blur-2xl transition-opacity duration-500 group-hover:opacity-15"
         style={{ background: color }}
       />
 
@@ -362,8 +362,8 @@ function MilestoneCard({
         <div
           className="relative grid h-12 w-12 shrink-0 place-items-center rounded-[28%] ring-line"
           style={{
-            background: `linear-gradient(155deg, ${withAlpha(accent, 0.95)}, ${withAlpha(accent, 0.4)})`,
-            boxShadow: `0 12px 30px -14px ${color}, inset 0 1px 0 rgba(255,255,255,0.3)`,
+            background: `linear-gradient(155deg, ${withAlpha(accent, 0.95)}, ${withAlpha(accent, 0.8)})`,
+            boxShadow: `0 0 0 4px ${withAlpha(accent, 0.15)}, inset 0 1px 0 rgba(255,255,255,0.3)`,
           }}
         >
           <span
@@ -384,7 +384,7 @@ function MilestoneCard({
             <h3 className="font-display text-2xl font-semibold leading-none tracking-tight text-ink">
               {title}
             </h3>
-            <span className="font-data shrink-0 text-[0.7rem] tracking-wide text-faint">
+            <span className="font-data shrink-0 text-sm tracking-wide text-faint">
               {date}
             </span>
           </div>
@@ -446,7 +446,7 @@ function Outro({ reduceMotion }: { reduceMotion: boolean }) {
         style={{
           opacity: reduceMotion ? 0.4 : glowOpacity,
           background:
-            'radial-gradient(70% 60% at 50% 50%, rgba(214,255,59,0.10), transparent 60%), radial-gradient(60% 50% at 22% 38%, rgba(56,232,255,0.08), transparent 62%), radial-gradient(60% 50% at 80% 64%, rgba(255,46,154,0.08), transparent 62%)',
+            'radial-gradient(70% 60% at 50% 50%, rgba(93,107,0,0.06), transparent 60%), radial-gradient(60% 50% at 22% 38%, rgba(0,109,124,0.04), transparent 62%), radial-gradient(60% 50% at 80% 64%, rgba(184,13,98,0.04), transparent 62%)',
         }}
       />
 
@@ -456,7 +456,7 @@ function Outro({ reduceMotion }: { reduceMotion: boolean }) {
         className="pointer-events-none absolute inset-0 -z-10 opacity-[0.5]"
         style={{
           backgroundImage:
-            'linear-gradient(to right, rgba(246,246,243,0.04) 1px, transparent 1px), linear-gradient(to bottom, rgba(246,246,243,0.04) 1px, transparent 1px)',
+            'linear-gradient(to right, rgba(28,27,23,0.04) 1px, transparent 1px), linear-gradient(to bottom, rgba(28,27,23,0.04) 1px, transparent 1px)',
           backgroundSize: '72px 72px',
           maskImage:
             'radial-gradient(70% 60% at 50% 50%, black, transparent 78%)',
@@ -490,13 +490,13 @@ function Outro({ reduceMotion }: { reduceMotion: boolean }) {
         </motion.h2>
 
         <Reveal delay={0.16}>
-          <p className="mx-auto mt-9 max-w-[44ch] text-balance font-display text-big font-light leading-tight text-mist">
-            The future arrived — and never left.
+          <p className="mx-auto mt-9 max-w-[44ch] text-balance font-display text-big font-light leading-tight text-ink">
+            <span className="mark">The future arrived — and never left.</span>
           </p>
         </Reveal>
 
         <Reveal delay={0.22}>
-          <p className="mx-auto mt-8 max-w-[64ch] text-balance text-base leading-relaxed text-mist sm:text-lg">
+          <p className="measure mx-auto mt-8 text-balance text-base leading-relaxed text-mist sm:text-lg">
             It was never just the gadgets. In ten years the technology rewired
             the economy, the way we connect, and who holds power — knowledge,
             money, friendship, news, and a camera, all folded into a single
@@ -509,7 +509,7 @@ function Outro({ reduceMotion }: { reduceMotion: boolean }) {
           <div className="mx-auto mt-12 flex max-w-3xl flex-wrap items-center justify-center gap-x-2 gap-y-3 sm:gap-x-3">
             {ARC.map((step, i) => (
               <span key={step} className="flex items-center gap-x-2 sm:gap-x-3">
-                <span className="rounded-full bg-surface/60 px-3 py-1.5 font-data text-[0.7rem] tracking-wide text-chrome ring-line">
+                <span className="rounded-full bg-surface/60 px-3 py-1.5 font-data text-sm tracking-wide text-chrome ring-line">
                   {step}
                 </span>
                 {i < ARC.length - 1 && (
@@ -614,11 +614,11 @@ function Footer({ reduceMotion }: { reduceMotion: boolean }) {
         {/* Credit + disclaimer + meta row */}
         <div className="mt-14 flex flex-col items-center gap-8 border-t border-line pt-10 sm:mt-16 sm:flex-row sm:items-end sm:justify-between sm:text-left">
           <Reveal className="max-w-md text-center sm:text-left">
-            <p className="text-sm leading-relaxed text-mist">
+            <p className="font-data text-sm leading-relaxed text-faint">
               An interactive showcase — designed &amp; built as a flagship
               experience.
             </p>
-            <p className="mt-2 text-xs leading-relaxed text-faint">
+            <p className="font-data mt-2 border-t border-line pt-2 text-sm leading-relaxed text-faint">
               Dates and figures are historical; some are rounded for clarity.
             </p>
           </Reveal>
@@ -631,13 +631,13 @@ function Footer({ reduceMotion }: { reduceMotion: boolean }) {
               </span>
               <span
                 className={cn(
-                  'mt-2 inline-flex items-center gap-2 font-data text-[0.7rem] tracking-wide text-faint',
+                  'mt-2 inline-flex items-center gap-2 font-data text-sm tracking-wide text-faint',
                 )}
               >
                 <span
                   aria-hidden
                   className="block h-1.5 w-1.5 rounded-full bg-acid"
-                  style={{ boxShadow: '0 0 8px var(--color-acid)' }}
+                  style={{ boxShadow: '0 0 0 4px rgba(93,107,0,0.18)' }}
                 />
                 End of transmission
               </span>

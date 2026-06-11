@@ -65,7 +65,7 @@ function MorphAct({ reduced }: { reduced: boolean }) {
     <div className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden px-6 py-24 text-center">
       {/* ambient bloom */}
       <div aria-hidden className="pointer-events-none absolute inset-0">
-        <div className="absolute left-1/2 top-1/2 h-[60vmin] w-[60vmin] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(circle,rgba(214,255,59,0.12),transparent_62%)] blur-2xl" />
+        <div className="absolute left-1/2 top-1/2 h-[60vmin] w-[60vmin] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(circle,rgba(214,255,59,0.18),transparent_62%)] blur-2xl" />
       </div>
 
       <div className="relative flex flex-col items-center gap-7">
@@ -75,7 +75,7 @@ function MorphAct({ reduced }: { reduced: boolean }) {
 
         <motion.p
           {...reveal(0)}
-          className="font-mono text-xs uppercase tracking-[0.32em] text-faint"
+          className="font-mono text-xs uppercase tracking-[0.32em] text-mist"
         >
           Three things —
         </motion.p>
@@ -94,7 +94,7 @@ function MorphAct({ reduced }: { reduced: boolean }) {
 
         <motion.p
           {...reveal(4)}
-          className="font-mono text-xs uppercase tracking-[0.32em] text-faint"
+          className="font-mono text-xs uppercase tracking-[0.32em] text-mist"
         >
           are not three separate devices.
         </motion.p>
@@ -497,14 +497,8 @@ function PhoneDevice({ reduced }: { reduced: boolean }) {
 
   return (
     <div className="relative mx-auto w-[clamp(248px,78vw,320px)]">
-      {/* glow behind device */}
-      <div
-        aria-hidden
-        className="pointer-events-none absolute -inset-10 -z-10 rounded-[60px] bg-[radial-gradient(circle_at_50%_40%,rgba(56,232,255,0.18),transparent_60%)] blur-2xl"
-      />
-
       {/* ALUMINUM BEZEL */}
-      <div className="relative aspect-[320/520] rounded-[44px] bg-gradient-to-b from-[#f4f6f8] via-[#aeb3bb] to-[#6f747d] p-[3px] shadow-[0_40px_90px_-30px_rgba(0,0,0,0.85),0_0_0_1px_rgba(255,255,255,0.18)_inset]">
+      <div className="relative aspect-[320/520] rounded-[44px] bg-gradient-to-b from-[#f4f6f8] via-[#aeb3bb] to-[#6f747d] p-[3px] shadow-[0_30px_60px_-28px_rgba(28,27,23,0.38),0_0_0_1px_rgba(255,255,255,0.18)_inset]">
         <div className="relative h-full w-full rounded-[42px] bg-gradient-to-b from-[#2a2c30] to-[#0c0d10] p-[10px]">
           {/* GLASS */}
           <div className="relative flex h-full w-full flex-col overflow-hidden rounded-[30px] bg-black ring-1 ring-white/10">
@@ -653,7 +647,7 @@ function CopyColumn() {
 
   return (
     <div ref={ref} className="flex flex-col gap-7">
-      <p className="kicker text-faint">Hands on the glass</p>
+      <p className="kicker">Hands on the glass</p>
 
       <motion.h2
         className="font-display text-huge font-semibold leading-[0.92] tracking-tight text-ink"
@@ -718,11 +712,11 @@ function CopyColumn() {
         </div>
       </div>
 
-      <p className="max-w-md text-sm text-faint">
+      <p className="max-w-md text-sm text-mist">
         Try it. Slide to unlock — then tap an icon to open it, and press the
         home button to come back. Keyboard works too:{' '}
-        <span className="font-mono text-mist">Enter</span> to unlock,{' '}
-        <span className="font-mono text-mist">Esc</span> to go home.
+        <span className="font-mono text-ink">Enter</span> to unlock,{' '}
+        <span className="font-mono text-ink">Esc</span> to go home.
       </p>
     </div>
   )
@@ -768,7 +762,7 @@ export function IphoneMoment() {
     <section
       id="iphone"
       ref={rootRef}
-      className="relative overflow-hidden bg-void"
+      className="relative overflow-hidden border-t border-line bg-abyss"
       aria-labelledby="iphone-heading"
     >
       <h2 id="iphone-heading" className="sr-only">
@@ -789,7 +783,7 @@ export function IphoneMoment() {
         {/* faint backdrop bloom */}
         <div
           aria-hidden
-          className="pointer-events-none absolute left-1/2 top-1/3 -z-0 h-[70vmin] w-[70vmin] -translate-x-1/2 rounded-full bg-[radial-gradient(circle,rgba(255,46,154,0.07),transparent_62%)] blur-3xl"
+          className="pointer-events-none absolute left-1/2 top-1/3 -z-0 h-[70vmin] w-[70vmin] -translate-x-1/2 rounded-full bg-[radial-gradient(circle,rgba(184,13,98,0.05),transparent_62%)] blur-3xl"
         />
 
         <div className="relative grid items-center gap-14 lg:grid-cols-[1.05fr_0.95fr] lg:gap-20">

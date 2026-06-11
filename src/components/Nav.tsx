@@ -32,7 +32,7 @@ export function Nav() {
   return (
     <>
       {/* Top bar */}
-      <header className="pointer-events-none fixed inset-x-0 top-0 z-[65] flex items-center justify-between px-[clamp(1.25rem,5vw,3.5rem)] py-5 mix-blend-difference">
+      <header className="pointer-events-none fixed inset-x-0 top-0 z-[65] flex items-center justify-between px-[clamp(1.25rem,5vw,3.5rem)] py-5">
         <button
           type="button"
           onClick={() => scrollTo(0)}
