@@ -568,7 +568,7 @@ export const RIPPLE: RippleLens[] = [
     numeral: 'IV',
     label: 'Political',
     accent: 'cobalt',
-    headline: '9/11, surveillance, and online campaigns.',
+    headline: 'Politics changed too.',
     tagline:
       'From the September 11 attacks and the War on Terror to the first presidential campaign run online.',
     context:
@@ -609,7 +609,7 @@ export const RIPPLE: RippleLens[] = [
     numeral: 'II',
     label: 'Economic',
     accent: 'tangerine',
-    headline: 'Two crashes and a new economy.',
+    headline: 'The economy changed a lot too.',
     tagline:
       'The decade began and ended with major crashes, with a new kind of internet business growing in between.',
     context:
@@ -650,7 +650,7 @@ export const RIPPLE: RippleLens[] = [
     numeral: 'III',
     label: 'Social',
     accent: 'magenta',
-    headline: 'Life moved online.',
+    headline: 'The way people connect changed too.',
     tagline:
       'How people met, shared, and kept in touch changed once the internet became social.',
     context:
@@ -689,7 +689,7 @@ export const RIPPLE: RippleLens[] = [
     numeral: 'I',
     label: 'Technological',
     accent: 'cyan',
-    headline: 'Technology moved online and into our pockets.',
+    headline: 'Technology changed a lot.',
     tagline:
       'The basic tools that everything else relied on: fast internet, the cloud, and the smartphone.',
     context:

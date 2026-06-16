@@ -57,7 +57,7 @@ export function HomePage() {
           </Reveal>
           <Reveal delay={0.18}>
             <p className="measure mt-6 text-base leading-relaxed text-mist">
-              Four forces changed at once. Here is each one, in short.
+              There were four main factors that changed. Here they are.
             </p>
           </Reveal>
         </div>
