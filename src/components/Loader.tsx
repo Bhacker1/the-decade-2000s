@@ -39,7 +39,7 @@ export function Loader({ onDone }: { onDone: () => void }) {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.1 }}
           >
-            2000 — 2010
+            2000–2010
           </motion.span>
           <div className="font-display text-[clamp(4rem,16vw,11rem)] font-semibold leading-none tracking-[-0.04em]">
             {count}
@@ -57,7 +57,7 @@ export function Loader({ onDone }: { onDone: () => void }) {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.3 }}
           >
-            Loading the decade technology exploded
+            Loading 2000 to 2010
           </motion.span>
         </motion.div>
       )}

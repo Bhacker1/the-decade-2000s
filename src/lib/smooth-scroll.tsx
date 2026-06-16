@@ -14,7 +14,10 @@ gsap.registerPlugin(ScrollTrigger)
 type ScrollTarget = number | string | HTMLElement
 
 interface SmoothScrollCtx {
-  scrollTo: (target: ScrollTarget, opts?: { offset?: number; duration?: number }) => void
+  scrollTo: (
+    target: ScrollTarget,
+    opts?: { offset?: number; duration?: number; immediate?: boolean },
+  ) => void
 }
 
 const Ctx = createContext<SmoothScrollCtx>({ scrollTo: () => {} })
@@ -65,7 +68,11 @@ export function SmoothScroll({ children }: { children: ReactNode }) {
   const scrollTo: SmoothScrollCtx['scrollTo'] = (target, opts) => {
     const lenis = lenisRef.current
     if (lenis) {
-      lenis.scrollTo(target, { offset: opts?.offset ?? 0, duration: opts?.duration ?? 1.4 })
+      lenis.scrollTo(target, {
+        offset: opts?.offset ?? 0,
+        duration: opts?.duration ?? 1.4,
+        immediate: opts?.immediate ?? false,
+      })
       return
     }
     // Reduced-motion / fallback path

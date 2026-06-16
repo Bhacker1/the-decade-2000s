@@ -40,7 +40,7 @@ export function ActIntro({ lensId, sectionId }: ActIntroProps) {
     <section
       id={sectionId}
       ref={ref}
-      aria-label={`Force ${lens.numeral} — ${lens.label}`}
+      aria-label={`Force ${lens.numeral}: ${lens.label}`}
       className="relative flex min-h-screen items-center overflow-hidden border-t border-line section-pad"
     >
       {/* Oversized, very faint backdrop numeral */}

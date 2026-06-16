@@ -56,8 +56,7 @@ export function SocialNetwork() {
           <p className="kicker">III · Social</p>
           <h2 className="mt-5 text-huge">The world gets connected.</h2>
           <p className="mt-5 max-w-md text-mist">
-            Five platforms wired a generation together — one new connection at a
-            time.
+            Five major platforms changed how people met and shared online.
           </p>
         </header>
 

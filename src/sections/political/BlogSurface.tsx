@@ -239,7 +239,7 @@ export function BlogSurface() {
                 The wire services spent the weekend repeating the official line word for word.
                 A reader in the room sent us three photographs, a scanned memo, and a phone
                 number. We made the calls the press pool didn&rsquo;t. The dates don&rsquo;t
-                line up &mdash; and once you see the timestamps, you can&rsquo;t un-see them.
+                line up, and once you see the timestamps, you can&rsquo;t un-see them.
               </p>
               <p style={{ margin: 0 }}>
                 This is what we keep saying: a thousand readers with cameras beat one anchor
@@ -306,7 +306,7 @@ export function BlogSurface() {
                 display: 'block',
               }}
             >
-              Read the Transcript Yourself &mdash; They&rsquo;re Hoping You Won&rsquo;t
+              Read the Transcript Yourself: They&rsquo;re Hoping You Won&rsquo;t
             </a>
             <div
               style={{
@@ -332,7 +332,7 @@ export function BlogSurface() {
                   color: '#54524a',
                 }}
               >
-                &ldquo;If the networks won&rsquo;t link the source, we will.&rdquo; &mdash;{' '}
+                &ldquo;If the networks won&rsquo;t link the source, we will.&rdquo;{' '}
                 <a
                   href="#"
                   className="bsf2004-a"
@@ -344,7 +344,7 @@ export function BlogSurface() {
               </blockquote>
               <p style={{ margin: 0 }}>
                 Permalink it, blog it, forward it. The point of all this isn&rsquo;t my
-                opinion &mdash; it&rsquo;s the primary document, in your hands, before someone
+                opinion, it&rsquo;s the primary document, in your hands, before someone
                 decides you didn&rsquo;t need to see it.
               </p>
             </div>
@@ -497,7 +497,7 @@ export function BlogSurface() {
                   lineHeight: 1.4,
                 }}
               >
-                Add us to your aggregator &mdash; or just hit{' '}
+                Add us to your aggregator, or just hit{' '}
                 <b style={{ color: '#5a584f' }}>Refresh</b>.
               </div>
             </div>

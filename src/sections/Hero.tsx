@@ -265,7 +265,7 @@ export function Hero() {
             >
               <span className="text-acid">00</span>
               <span className="h-px w-8 bg-line-strong" aria-hidden />
-              <span>Prelude</span>
+              <span>Introduction</span>
             </motion.p>
 
             {/* Kinetic masked title */}
@@ -302,8 +302,8 @@ export function Hero() {
               transition={{ delay: 0.62, duration: 1, ease: EASE_OUT }}
               className="mt-7 max-w-[34ch] text-balance font-display text-big font-light leading-tight text-mist sm:mt-9"
             >
-              When technology{' '}
-              <span className="mark text-ink">exploded.</span>
+              How technology changed{' '}
+              <span className="mark text-ink">America</span>, 2000 to 2010.
             </motion.p>
 
             {/* Mono sub */}

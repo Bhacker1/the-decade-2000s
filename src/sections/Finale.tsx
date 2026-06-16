@@ -2,9 +2,8 @@ import { useMemo, useRef } from 'react'
 import { motion, useReducedMotion, useScroll, useTransform } from 'framer-motion'
 import { Reveal } from '@/components/ui/Reveal'
 import { SectionLabel } from '@/components/ui/SectionLabel'
-import { cn } from '@/lib/cn'
-import { TIMELINE, QUOTES } from '@/lib/content'
-import { useSmoothScroll } from '@/lib/smooth-scroll'
+import { SiteFooter } from '@/components/SiteFooter'
+import { TIMELINE } from '@/lib/content'
 
 /* ============================================================
    Chapter 07 · A New Canvas — the resolution.
@@ -84,10 +83,10 @@ export function Finale() {
 
           <Reveal delay={0.12}>
             <p className="measure mt-7 text-balance text-base leading-relaxed text-mist sm:text-lg">
-              Bigger than a phone, lighter than a laptop — the iPad turned
-              software into something you could hold like a magazine. And
-              Instagram, born for the camera already in your pocket, closed the
-              loop the decade had been drawing all along.
+              Bigger than a phone and lighter than a laptop, the iPad made a
+              new kind of device you could hold like a magazine. Instagram was
+              built for the camera already in your pocket, which is where the
+              whole decade had been heading.
             </p>
           </Reveal>
         </header>
@@ -139,7 +138,7 @@ export function Finale() {
       {/* ============================================================
           PART C — The footer
           ============================================================ */}
-      <Footer reduceMotion={!!reduceMotion} />
+      <SiteFooter />
     </section>
   )
 }
@@ -437,7 +436,7 @@ function Outro({ reduceMotion }: { reduceMotion: boolean }) {
   return (
     <div
       ref={ref}
-      className="relative border-t border-line bg-abyss/60 py-[clamp(7rem,18vh,15rem)]"
+      className="relative border-t border-line bg-abyss/60 py-[clamp(5rem,12vh,9rem)]"
     >
       {/* full-bleed pop glow, drifting */}
       <motion.div
@@ -470,42 +469,32 @@ function Outro({ reduceMotion }: { reduceMotion: boolean }) {
           <p className="kicker mb-8 inline-flex items-center gap-3 text-mist">
             <span className="text-acid">2010</span>
             <span className="h-px w-8 bg-line-strong" aria-hidden />
-            <span>The resolution</span>
+            <span>Conclusion</span>
           </p>
         </Reveal>
 
-        {/* The grand statement — held at text-huge so the Footer's
-            text-mega wordmark stays the unambiguous final crescendo
-            (text-mega is reserved for the Hero/Footer bookend pair). */}
         <motion.h2
           style={{ y: reduceMotion ? 0 : driftY }}
-          className="font-display text-huge font-bold leading-[0.86] tracking-[-0.03em] text-ink will-fx"
+          className="font-display text-huge font-bold leading-[0.92] tracking-[-0.03em] text-ink will-fx"
         >
           <Reveal y={40}>
-            <span className="block">Everything</span>
-          </Reveal>
-          <Reveal y={40} delay={0.08}>
-            <span className="block text-gradient grad-pop">changed.</span>
+            <span className="block">What it all added up to.</span>
           </Reveal>
         </motion.h2>
 
         <Reveal delay={0.16}>
-          <p className="mx-auto mt-9 max-w-[44ch] text-balance font-display text-big font-light leading-tight text-ink">
-            <span className="mark">The future arrived — and never left.</span>
+          <p className="measure mx-auto mt-9 text-balance text-base leading-relaxed text-mist sm:text-lg">
+            Over ten years, a few technologies changed the economy, how people
+            connect, and who holds power. By 2010, the iPod, iTunes, Web 2.0,
+            the iPhone, the App Store, and the iPad had put knowledge, money,
+            friendship, news, and a camera onto a single device most people
+            carried everywhere. Many of those changes still shape daily life
+            today.
           </p>
         </Reveal>
 
-        <Reveal delay={0.22}>
-          <p className="measure mx-auto mt-8 text-balance text-base leading-relaxed text-mist sm:text-lg">
-            It was never just the gadgets. In ten years the technology rewired
-            the economy, the way we connect, and who holds power — knowledge,
-            money, friendship, news, and a camera, all folded into a single
-            sheet of glass — and the world never looked back.
-          </p>
-        </Reveal>
-
-        {/* the arc ribbon */}
-        <Reveal delay={0.28}>
+        {/* the arc ribbon — the decade in order */}
+        <Reveal delay={0.24}>
           <div className="mx-auto mt-12 flex max-w-3xl flex-wrap items-center justify-center gap-x-2 gap-y-3 sm:gap-x-3">
             {ARC.map((step, i) => (
               <span key={step} className="flex items-center gap-x-2 sm:gap-x-3">
@@ -521,140 +510,8 @@ function Outro({ reduceMotion }: { reduceMotion: boolean }) {
             ))}
           </div>
         </Reveal>
-
-        {/* the coda quote */}
-        <Reveal delay={0.34}>
-          <figure className="mx-auto mt-16 max-w-2xl">
-            <blockquote className="font-display text-big font-light leading-tight tracking-tight text-ink">
-              <span className="text-gradient grad-pop">
-                “{QUOTES.foolish.text}”
-              </span>
-            </blockquote>
-            <figcaption className="kicker mt-5 text-faint">
-              {QUOTES.foolish.attribution}
-            </figcaption>
-          </figure>
-        </Reveal>
       </div>
     </div>
   )
 }
 
-/* ============================================================
-   The footer — wordmark, span, credit, disclaimer, back-to-top.
-   ============================================================ */
-
-function Footer({ reduceMotion }: { reduceMotion: boolean }) {
-  const { scrollTo } = useSmoothScroll()
-
-  return (
-    <footer className="relative border-t border-line bg-void">
-      {/* top edge accent */}
-      <div aria-hidden className="grad-pop h-px w-full opacity-50" />
-
-      {/* Extra breathing room above the wordmark so the eye resolves the
-          Outro's closing statement before the text-mega bookend lands. */}
-      <div className="u-container-wide pb-16 pt-24 sm:pb-20 sm:pt-32">
-        {/* Back to top — full-width inviting control */}
-        <Reveal>
-          <button
-            type="button"
-            onClick={() => scrollTo(0, { duration: 1.8 })}
-            className="group mx-auto mb-14 flex flex-col items-center gap-3 text-mist transition-colors duration-300 hover:text-ink sm:mb-16"
-            aria-label="Back to top"
-          >
-            <span
-              className="grid h-12 w-12 place-items-center rounded-full ring-line transition-all duration-300 group-hover:-translate-y-1 group-hover:ring-acid/60"
-              aria-hidden
-            >
-              <motion.svg
-                width="16"
-                height="16"
-                viewBox="0 0 16 16"
-                fill="none"
-                className="text-acid"
-                animate={reduceMotion ? undefined : { y: [0, -2, 0] }}
-                transition={{
-                  duration: 1.8,
-                  ease: 'easeInOut',
-                  repeat: Infinity,
-                }}
-              >
-                <path
-                  d="M8 13V3M8 3L3.5 7.5M8 3l4.5 4.5"
-                  stroke="currentColor"
-                  strokeWidth="1.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </motion.svg>
-            </span>
-            <span className="kicker">Back to top</span>
-          </button>
-        </Reveal>
-
-        {/* Wordmark + span */}
-        <div className="flex flex-col items-center gap-4 text-center">
-          <Reveal>
-            <div className="font-display text-mega font-bold leading-[0.82] tracking-[-0.04em] text-ink">
-              THE{' '}
-              <span className="text-gradient grad-chrome">DECADE</span>
-            </div>
-          </Reveal>
-
-          <Reveal delay={0.06}>
-            <div className="kicker flex items-center gap-3 text-mist">
-              <span className="font-data text-steel">2000</span>
-              <span className="h-px w-8 bg-line-strong" aria-hidden />
-              <span className="font-data text-steel">2010</span>
-            </div>
-          </Reveal>
-        </div>
-
-        {/* Credit + disclaimer + meta row */}
-        <div className="mt-14 flex flex-col items-center gap-8 border-t border-line pt-10 sm:mt-16 sm:flex-row sm:items-end sm:justify-between sm:text-left">
-          <Reveal className="max-w-md text-center sm:text-left">
-            <p className="font-data text-sm leading-relaxed text-faint">
-              An interactive showcase — designed &amp; built as a flagship
-              experience.
-            </p>
-            <p className="font-data mt-2 border-t border-line pt-2 text-sm leading-relaxed text-faint">
-              Dates and figures are historical; some are rounded for clarity.
-            </p>
-          </Reveal>
-
-          <Reveal delay={0.06} className="text-center sm:text-right">
-            <div className="flex flex-col items-center gap-1.5 sm:items-end">
-              <span className="kicker text-faint">A journey through</span>
-              <span className="font-display text-lg font-medium tracking-tight text-chrome">
-                technology · 2000—2010
-              </span>
-              <span
-                className={cn(
-                  'mt-2 inline-flex items-center gap-2 font-data text-sm tracking-wide text-faint',
-                )}
-              >
-                <span
-                  aria-hidden
-                  className="block h-1.5 w-1.5 rounded-full bg-acid"
-                  style={{ boxShadow: '0 0 0 4px rgba(93,107,0,0.18)' }}
-                />
-                End of transmission
-              </span>
-            </div>
-          </Reveal>
-        </div>
-      </div>
-
-      {/* Oversized faint backdrop wordmark for depth */}
-      <div
-        aria-hidden
-        className="edge-mask-y pointer-events-none relative -mt-4 select-none overflow-hidden"
-      >
-        <div className="font-display whitespace-nowrap text-center text-[22vw] font-bold leading-none tracking-[-0.05em] text-ink/[0.03]">
-          2000 — 2010
-        </div>
-      </div>
-    </footer>
-  )
-}

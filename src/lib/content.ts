@@ -18,7 +18,7 @@ export interface TimelineEvent {
   metric?: { value: string; label: string }
 }
 
-/** The milestone spine, 2000 → 2010 — across all four forces. */
+/** The milestone spine, 2000 to 2010, across all four forces. */
 export const TIMELINE: TimelineEvent[] = [
   {
     id: 'dotcom',
@@ -27,7 +27,7 @@ export const TIMELINE: TimelineEvent[] = [
     title: 'The dot-com crash',
     subtitle: 'The first bubble bursts',
     blurb:
-      'The NASDAQ peaked in March 2000 and then collapsed roughly 78%, erasing trillions in paper wealth and ending the first internet gold rush.',
+      'The NASDAQ peaked in March 2000 and then fell about 78%. Trillions in stock value disappeared and the first internet boom was over.',
     tag: 'world',
     accent: 'tangerine',
     metric: { value: '−78%', label: 'NASDAQ from its peak' },
@@ -37,9 +37,9 @@ export const TIMELINE: TimelineEvent[] = [
     year: '2001',
     date: 'Jan 15, 2001',
     title: 'Wikipedia',
-    subtitle: 'The sum of human knowledge, editable by anyone',
+    subtitle: 'An encyclopedia anyone can edit',
     blurb:
-      'A free encyclopedia that anyone could edit launched quietly — and within a decade became one of the most visited sites on Earth.',
+      'A free encyclopedia that anyone could edit. Within ten years it was one of the most visited sites on the web.',
     tag: 'web',
     accent: 'cyan',
   },
@@ -48,9 +48,9 @@ export const TIMELINE: TimelineEvent[] = [
     year: '2001',
     date: 'Mar 24, 2001',
     title: 'Mac OS X',
-    subtitle: 'Aqua, and a new foundation',
+    subtitle: 'A new foundation, and the Aqua look',
     blurb:
-      "Apple's UNIX-based operating system arrived with the liquid Aqua interface — the bedrock everything Apple built next would stand on.",
+      "Apple's UNIX-based operating system, with the glassy Aqua look. It became the base for everything Apple built next.",
     tag: 'apple',
     accent: 'cobalt',
   },
@@ -59,9 +59,9 @@ export const TIMELINE: TimelineEvent[] = [
     year: '2001',
     date: 'Sep 11, 2001',
     title: 'September 11',
-    subtitle: 'The decade’s defining shock',
+    subtitle: 'The shock that set the tone',
     blurb:
-      'The deadliest attack on US soil reshaped politics, security and privacy for a generation — and launched the War on Terror.',
+      'The deadliest attack on US soil. It reshaped politics, security, and privacy for years and started the War on Terror.',
     tag: 'world',
     accent: 'steel',
     metric: { value: '2,977', label: 'lives lost' },
@@ -73,7 +73,7 @@ export const TIMELINE: TimelineEvent[] = [
     title: 'iPod',
     subtitle: '1,000 songs in your pocket',
     blurb:
-      'A scroll wheel, a white-on-white silhouette, and your entire music library on your hip. The object that began Apple’s comeback.',
+      "A click wheel, a white case, and your whole music library in one hand. It started Apple's turnaround.",
     tag: 'apple',
     accent: 'acid',
     metric: { value: '1,000', label: 'songs in your pocket' },
@@ -85,7 +85,7 @@ export const TIMELINE: TimelineEvent[] = [
     title: 'iTunes Store',
     subtitle: 'A song for 99¢',
     blurb:
-      'Buy one track, legally, for a dollar. It sold a million songs in its first week and rewrote the economics of the music industry.',
+      'Buy a single track, legally, for a dollar. It sold a million songs in its first week and changed how the music business made money.',
     tag: 'apple',
     accent: 'magenta',
     metric: { value: '1M', label: 'songs sold in first week' },
@@ -97,7 +97,7 @@ export const TIMELINE: TimelineEvent[] = [
     title: 'MySpace',
     subtitle: 'A profile, a song, a Top 8',
     blurb:
-      'The first social network to truly scale — glittery, customizable, and soundtracked. The internet became a place you decorated.',
+      'The first social network to really take off. Profiles were customizable, loud, and set to music.',
     tag: 'culture',
     accent: 'grape',
   },
@@ -108,7 +108,7 @@ export const TIMELINE: TimelineEvent[] = [
     title: 'Facebook',
     subtitle: 'The social graph',
     blurb:
-      'Born in a Harvard dorm as “TheFacebook.” It mapped real relationships onto the web and would reach half a billion people by 2010.',
+      'Started in a Harvard dorm as TheFacebook. It put real-life relationships online and reached half a billion people by 2010.',
     tag: 'web',
     accent: 'cobalt',
     metric: { value: '500M', label: 'users by 2010' },
@@ -120,7 +120,7 @@ export const TIMELINE: TimelineEvent[] = [
     title: 'Gmail',
     subtitle: 'A gigabyte of inbox',
     blurb:
-      'Launched on April Fools’ with a then-absurd 1 GB of free storage. Email stopped being something you deleted.',
+      "Launched on April Fools' Day with 1 GB of free storage, which felt huge at the time. You no longer had to delete old mail.",
     tag: 'web',
     accent: 'tangerine',
     metric: { value: '1 GB', label: 'free storage' },
@@ -130,9 +130,9 @@ export const TIMELINE: TimelineEvent[] = [
     year: '2005',
     date: 'Feb 8, 2005',
     title: 'Google Maps',
-    subtitle: 'The world, draggable',
+    subtitle: 'A map you could drag',
     blurb:
-      'A slippy, draggable map that loaded as you moved. Within years, getting lost became a choice.',
+      'A map you could drag around, loading new areas as you moved. Paper maps and printed directions started to fade.',
     tag: 'web',
     accent: 'cyan',
   },
@@ -143,7 +143,7 @@ export const TIMELINE: TimelineEvent[] = [
     title: 'YouTube',
     subtitle: '“Me at the zoo”',
     blurb:
-      'The first upload was 19 seconds at the zoo. By 2010 the world was uploading a full day of video every single minute.',
+      'The first upload was a 19-second clip at the zoo. By 2010 people were posting a full day of video every minute.',
     tag: 'culture',
     accent: 'magenta',
     metric: { value: '24 hrs', label: 'uploaded every minute (2010)' },
@@ -155,7 +155,7 @@ export const TIMELINE: TimelineEvent[] = [
     title: 'Twitter',
     subtitle: '140 characters',
     blurb:
-      'The first tweet — “just setting up my twttr.” A global nervous system compressed into a single line of text.',
+      "The first tweet was “just setting up my twttr.” Short public messages turned out to spread news fast.",
     tag: 'culture',
     accent: 'cyan',
     metric: { value: '140', label: 'characters' },
@@ -167,7 +167,7 @@ export const TIMELINE: TimelineEvent[] = [
     title: 'Nintendo Wii',
     subtitle: 'You are the controller',
     blurb:
-      'Motion control put the whole living room on its feet and pulled gaming out of the bedroom and into the mainstream.',
+      'Motion controls got whole families off the couch and helped make gaming mainstream.',
     tag: 'hardware',
     accent: 'lime',
   },
@@ -178,7 +178,7 @@ export const TIMELINE: TimelineEvent[] = [
     title: 'iPhone',
     subtitle: 'Apple reinvents the phone',
     blurb:
-      'An iPod, a phone, and an internet communicator — fused into a single sheet of glass you touched with your fingers. Everything after this is the after.',
+      'An iPod, a phone, and an internet device in one piece of glass you controlled with your fingers. Phones were never the same.',
     tag: 'mobile',
     accent: 'acid',
     metric: { value: '6.1M', label: 'first-gen units sold' },
@@ -190,7 +190,7 @@ export const TIMELINE: TimelineEvent[] = [
     title: 'MacBook Air',
     subtitle: 'Out of a manila envelope',
     blurb:
-      'Jobs slid the world’s thinnest notebook out of an interoffice envelope on stage. The future would be impossibly thin.',
+      'Jobs slid the thinnest laptop yet out of an office envelope on stage. Thin became the goal.',
     tag: 'apple',
     accent: 'chrome',
   },
@@ -201,7 +201,7 @@ export const TIMELINE: TimelineEvent[] = [
     title: 'App Store',
     subtitle: 'There’s an app for that',
     blurb:
-      'It opened with 500 apps and detonated an industry. The phone became a platform — and a billion downloads followed within nine months.',
+      'It opened with 500 apps and created a whole industry. A billion downloads followed within nine months.',
     tag: 'mobile',
     accent: 'tangerine',
     metric: { value: '500', label: 'apps at launch' },
@@ -213,7 +213,7 @@ export const TIMELINE: TimelineEvent[] = [
     title: 'Lehman Brothers falls',
     subtitle: 'The Great Recession begins',
     blurb:
-      'The largest bankruptcy in US history triggered a global financial crisis — the worst since the Depression — erasing trillions in wealth and millions of jobs.',
+      'The biggest bankruptcy in US history set off a global financial crisis, the worst since the Depression. Trillions in wealth and millions of jobs were gone.',
     tag: 'world',
     accent: 'tangerine',
     metric: { value: '$639B', label: 'largest US bankruptcy' },
@@ -225,7 +225,7 @@ export const TIMELINE: TimelineEvent[] = [
     title: 'Android',
     subtitle: 'The open challenger',
     blurb:
-      'The T-Mobile G1 brought Google’s open mobile OS to market — and set up the defining platform rivalry of the next decade.',
+      "The T-Mobile G1 put Google’s open phone software on sale and set up the platform rivalry of the next decade.",
     tag: 'mobile',
     accent: 'lime',
   },
@@ -236,7 +236,7 @@ export const TIMELINE: TimelineEvent[] = [
     title: 'A digital election',
     subtitle: 'Politics moves online',
     blurb:
-      'Barack Obama’s web-powered campaign mobilized millions and raised a record sum online — and he became the first Black US president.',
+      "Obama’s campaign used the web to organize supporters and raise a record amount of money. He became the first Black US president.",
     tag: 'world',
     accent: 'cobalt',
     metric: { value: '$750M', label: 'raised, much online' },
@@ -246,9 +246,9 @@ export const TIMELINE: TimelineEvent[] = [
     year: '2010',
     date: 'Jan 27, 2010',
     title: 'iPad',
-    subtitle: 'A third category',
+    subtitle: 'A new kind of device',
     blurb:
-      'Bigger than a phone, lighter than a laptop. A magazine you could hold — and a new canvas for everything.',
+      'Bigger than a phone, lighter than a laptop. It made a new category between the two.',
     tag: 'apple',
     accent: 'cobalt',
     metric: { value: '15M', label: 'sold in 2010' },
@@ -258,9 +258,9 @@ export const TIMELINE: TimelineEvent[] = [
     year: '2010',
     date: 'Oct 6, 2010',
     title: 'Instagram',
-    subtitle: 'A square, a filter',
+    subtitle: 'Photos on your phone',
     blurb:
-      'A camera-first social app built for the phone in your pocket. It hit a million users in two months and closed the decade.',
+      'A photo-sharing app built for the phone camera. It hit a million users in two months and closed out the decade.',
     tag: 'culture',
     accent: 'magenta',
     metric: { value: '1M', label: 'users in 2 months' },
@@ -339,7 +339,7 @@ export const STORE_APPS: StoreApp[] = [
   { name: 'Hipstamatic', glyph: '◫', hue: '#f7c948', year: '2010' },
 ]
 
-/** Big animated statistics — Apple's resurrection + the decade in numbers. */
+/** Big animated statistics — Apple's resurgence + the decade in numbers. */
 export interface Stat {
   id: string
   value: number
@@ -357,7 +357,7 @@ export const STATS: Stat[] = [
     prefix: '$',
     suffix: 'B',
     label: 'Apple market cap, end of 2010',
-    sub: 'From near-bankruptcy in 1997 — and ~$222B when it passed Microsoft in May 2010.',
+    sub: 'Up from near bankruptcy in 1997. It passed Microsoft in May 2010 at about $222B.',
     accent: 'acid',
   },
   {
@@ -365,7 +365,7 @@ export const STATS: Stat[] = [
     value: 290,
     suffix: 'M+',
     label: 'iPods sold by 2010',
-    sub: 'The device that funded the comeback.',
+    sub: 'The product that paid for the turnaround.',
     accent: 'cyan',
   },
   {
@@ -373,7 +373,7 @@ export const STATS: Stat[] = [
     value: 10,
     suffix: 'B',
     label: 'App Store downloads',
-    sub: 'Reached in under three years from launch.',
+    sub: 'Reached less than three years after launch.',
     accent: 'tangerine',
   },
   {
@@ -381,7 +381,7 @@ export const STATS: Stat[] = [
     value: 10,
     suffix: 'B',
     label: 'songs sold on iTunes',
-    sub: 'A dollar at a time, by 2010.',
+    sub: 'Sold a dollar at a time, by 2010.',
     accent: 'magenta',
   },
 ]
@@ -453,7 +453,7 @@ export const WEB_ERAS: WebEra[] = [
     url: 'http://www.geocities.com/SiliconValley/9042/',
     tags: ['Table layouts', 'Blue underlined links', 'Web-safe greys', 'Visitor counters', 'Times New Roman'],
     blurb:
-      'Beveled grey buttons, a hit counter and “Under Construction.” The web was a document you read, not an app you used.',
+      'Grey buttons, visitor counters, and “Under Construction” signs. Pages were things you read, not apps you used.',
     ambient: '46, 92, 92',
   },
   {
@@ -467,7 +467,7 @@ export const WEB_ERAS: WebEra[] = [
     url: 'http://www.angelfire.com/weblog/index.html',
     tags: ['Three-column tables', 'Verdana 11px', 'Tiled backgrounds', 'Blogrolls', 'Guestbooks'],
     blurb:
-      'Sidebars, blogrolls and a tiled background. The personal homepage became the personal blog.',
+      'Sidebars, blogrolls, and tiled backgrounds. The personal homepage turned into the personal blog.',
     ambient: '120, 96, 40',
   },
   {
@@ -481,7 +481,7 @@ export const WEB_ERAS: WebEra[] = [
     url: 'http://www.flickr.com/photos/',
     tags: ['Rounded corners', 'Glossy gradients', '“Beta” badges', 'Big friendly type', 'Pastel palettes'],
     blurb:
-      'Rounded corners, soft gradients and a permanent beta badge. The web learned to smile.',
+      'Rounded corners, soft gradients, and a “beta” badge on almost everything.',
     ambient: '40, 120, 200',
   },
   {
@@ -495,7 +495,7 @@ export const WEB_ERAS: WebEra[] = [
     url: 'http://digg.com/technology',
     tags: ['Gel buttons', 'Starbursts', 'Drop shadows', 'Reflections', 'Letterpress text'],
     blurb:
-      'Gel buttons, starbursts and reflections on everything. Maximum shine, maximum gradient.',
+      'Gel buttons, starbursts, and reflections on everything. The glossiest the web ever got.',
     ambient: '210, 90, 30',
   },
   {
@@ -509,7 +509,7 @@ export const WEB_ERAS: WebEra[] = [
     url: 'http://twitter.com/home',
     tags: ['12-column grids', 'Subtle gradients', 'Helvetica Neue', 'More whitespace', 'Sober palettes'],
     blurb:
-      'Grids, restraint and breathing room. The gloss receded and structure took over.',
+      'Grids, more whitespace, and less decoration. Structure took over from shine.',
     ambient: '60, 110, 150',
   },
   {
@@ -523,7 +523,7 @@ export const WEB_ERAS: WebEra[] = [
     url: 'https://instagr.am/',
     tags: ['Big type', 'Flat-ish surfaces', 'Retina-ready', 'Touch targets', 'Minimal chrome'],
     blurb:
-      'Big type, flatter surfaces and touch-sized targets. The web started designing for the phone first.',
+      'Big type, flatter surfaces, and touch-sized buttons. Sites started being built for the phone first.',
     ambient: '40, 150, 150',
   },
 ]
@@ -568,37 +568,38 @@ export const RIPPLE: RippleLens[] = [
     numeral: 'IV',
     label: 'Political',
     accent: 'cobalt',
-    headline: 'Power changed hands.',
-    tagline: 'A new century opened with a shock — and a new kind of power.',
+    headline: '9/11, surveillance, and online campaigns.',
+    tagline:
+      'From the September 11 attacks and the War on Terror to the first presidential campaign run online.',
     context:
-      'The decade began with the deadliest attack on American soil and a War on Terror that rewrote law, travel and privacy. It ended with a campaign run on email and YouTube — and the first Black US president. In between, the gatekeepers of news lost their monopoly: anyone with a connection could now break a story.',
+      'The decade started with the September 11 attacks, which led to the War on Terror and new surveillance laws that traded privacy for security. It ended with Barack Obama winning the presidency on an online campaign and becoming the first Black president. In between, blogs and websites broke news the big TV networks missed, so regular people could help shape the conversation for the first time.',
     items: [
       {
         year: '2001',
         title: 'September 11',
         blurb:
-          'The deadliest attack on US soil reshaped the decade: the War on Terror, the wars in Afghanistan and Iraq, and a new age of security.',
+          'The deadliest attack on US soil shaped the rest of the decade: the War on Terror, the wars in Afghanistan and Iraq, and tighter security everywhere.',
         stat: { value: 2977, label: 'lives lost on 9/11' },
       },
       {
         year: '2001',
         title: 'Security vs. privacy',
         blurb:
-          'The USA PATRIOT Act, signed weeks after the attacks, vastly expanded state surveillance — making privacy the defining tension of the digital age.',
+          'The USA PATRIOT Act, signed weeks after the attacks, greatly expanded government surveillance and started a long debate over privacy.',
         stat: { value: 45, suffix: ' days', label: 'from attack to law' },
       },
       {
         year: '2008',
         title: 'The first digital campaign',
         blurb:
-          'Barack Obama’s run turned email, video and social networks into a movement, and he became the first Black US president.',
+          'Obama’s campaign used email, video, and social media to organize supporters and raise money, and he became the first Black US president.',
         stat: { value: 750, prefix: '$', suffix: 'M', label: 'raised, much of it online' },
       },
       {
         year: '2004',
         title: 'News loses its gatekeepers',
         blurb:
-          'Blogs, forums and YouTube broke stories the networks missed. For the first time, anyone with a connection could shape the conversation.',
+          'Blogs, forums, and YouTube broke stories the TV networks missed. For the first time, anyone online could help shape the news.',
         stat: { value: 50, suffix: 'M', label: 'blogs tracked by 2006' },
       },
     ],
@@ -608,37 +609,38 @@ export const RIPPLE: RippleLens[] = [
     numeral: 'II',
     label: 'Economic',
     accent: 'tangerine',
-    headline: 'The money moved.',
-    tagline: 'A bust, a boom, and a crash — bookending a decade of reinvention.',
+    headline: 'Two crashes and a new economy.',
+    tagline:
+      'The decade began and ended with major crashes, with a new kind of internet business growing in between.',
     context:
-      'Two crashes bracketed the decade: the dot-com bust that ended the first internet gold rush, and the 2008 financial crisis — the worst since the Depression. Between them, search advertising, e-commerce and a brand-new app economy minted fortunes, while manufacturing and supply chains shifted decisively toward Asia.',
+      'The 2000s were bracketed by two crashes: the dot-com bust in 2000 and the financial crisis in 2008, the worst since the Great Depression. In between, companies built around search ads, online shopping, and mobile apps became some of the most valuable in the world, and a lot of manufacturing moved to Asia.',
     items: [
       {
         year: '2000',
         title: 'The dot-com crash',
         blurb:
-          'The bubble burst, erasing trillions in paper wealth and ending the first internet gold rush — but the survivors would inherit the web.',
+          'The dot-com bubble burst, wiping out trillions of dollars and ending the first internet boom. The companies that survived went on to dominate the web.',
         stat: { value: 78, suffix: '%', label: 'NASDAQ fall from its 2000 peak' },
       },
       {
         year: '2008',
         title: 'The Great Recession',
         blurb:
-          'Lehman Brothers’ collapse — the largest bankruptcy in US history — triggered a global crisis that reset the economy.',
+          'Lehman Brothers collapsed in the largest bankruptcy in US history, setting off a global financial crisis that cost millions of jobs.',
         stat: { value: 8.7, decimals: 1, suffix: 'M', label: 'US jobs lost' },
       },
       {
         year: '2004',
         title: 'Google goes public',
         blurb:
-          'Google’s IPO and the rise of search advertising built the engine of the modern internet economy.',
+          'Google’s stock-market debut and the growth of search advertising created the main money-making model of the modern internet.',
         stat: { value: 23, prefix: '$', suffix: 'B', label: 'Google revenue by 2009' },
       },
       {
         year: '2008',
         title: 'A brand-new app economy',
         blurb:
-          'Hardware moved to Asia and software moved to the store. The App Store minted a developer industry that hadn’t existed the year before.',
+          'The App Store created a brand-new software business almost overnight. Developers could now sell apps directly to millions of phones.',
         stat: { value: 500, label: 'apps the day the store opened' },
       },
     ],
@@ -648,36 +650,37 @@ export const RIPPLE: RippleLens[] = [
     numeral: 'III',
     label: 'Social',
     accent: 'magenta',
-    headline: 'We changed.',
-    tagline: 'How a billion people met, shared, and lived — online.',
+    headline: 'Life moved online.',
+    tagline:
+      'How people met, shared, and kept in touch changed once the internet became social.',
     context:
-      'Connection moved online and stayed there. Social networks rewired friendship and identity; YouTube, Wikipedia and blogs handed the microphone to everyone; and the smartphone made “being online” a permanent state rather than a place you visited — at the cost of a privacy we hadn’t yet learned to value.',
+      'In the 2000s, staying in touch moved online and stayed there. Social networks changed how people made friends and presented themselves. YouTube, Wikipedia, and blogs let anyone publish to the world. And as broadband and smartphones spread, being online stopped being a thing you did and became a constant, often without much thought about the personal data you were handing over.',
     items: [
       {
         year: '2004',
         title: 'The social web',
         blurb:
-          'MySpace, Facebook and Twitter rewired how people meet, share and fall out. Social life moved online — and stayed there.',
+          'MySpace, Facebook, and Twitter changed how people met and shared. Social life moved online and stayed there.',
         stat: { value: 500, suffix: 'M', label: 'Facebook users by 2010' },
       },
       {
         year: '2005',
         title: 'Everyone a broadcaster',
         blurb:
-          'YouTube, Wikipedia and blogs democratized media. The audience picked up the camera and never gave it back.',
+          'YouTube, Wikipedia, and blogs let ordinary people publish to a huge audience for the first time.',
         stat: { value: 24, suffix: ' hrs', label: 'of video uploaded every minute (2010)' },
       },
       {
         year: '2007',
         title: 'Always connected',
         blurb:
-          'Broadband replaced dial-up and the smartphone put the web in every pocket. “Online” stopped being a place you visited.',
+          'Broadband replaced dial-up and smartphones put the internet in people’s pockets. Being “online” became constant.',
       },
       {
         year: '2003',
         title: 'The price of “free”',
         blurb:
-          'Targeted ads, digital footprints and oversharing arrived together. The decade learned, slowly, that if it’s free, you’re the product.',
+          'Free services were paid for with personal data through targeted ads. People slowly learned that “if it’s free, you’re the product.”',
       },
     ],
   },
@@ -686,34 +689,35 @@ export const RIPPLE: RippleLens[] = [
     numeral: 'I',
     label: 'Technological',
     accent: 'cyan',
-    headline: 'The tools were rebuilt.',
-    tagline: 'The plumbing that made everything else possible.',
+    headline: 'Technology moved online and into our pockets.',
+    tagline:
+      'The basic tools that everything else relied on: fast internet, the cloud, and the smartphone.',
     context:
-      'Dial-up gave way to always-on broadband and Wi-Fi; the desktop web became a read-write platform of open APIs; computing itself moved into the cloud as a rentable utility; and the phone evolved from a calling device into the most important computer most people would ever own.',
+      'During the 2000s, the internet went from slow dial-up to always-on broadband and Wi-Fi. Web pages turned into interactive web apps. Companies started renting computing power online instead of buying their own servers (the “cloud”). And phones changed from simple calling devices into pocket computers. These changes were the foundation for almost everything else that happened in the decade.',
     items: [
       {
         year: '2006',
         title: 'The cloud',
         blurb:
-          'Amazon Web Services turned computing into a utility you rent by the hour — the foundation under every startup that followed.',
+          'Amazon Web Services let companies rent computing power and storage by the hour instead of buying servers. This made it much cheaper to start a tech company, and most apps today still run on services like it.',
       },
       {
         year: '2004',
         title: 'Web 2.0',
         blurb:
-          'AJAX, open APIs and the read-write web turned flat pages into living applications you could talk back to.',
+          'New tools like AJAX and open APIs let websites update without reloading the page. Flat pages became interactive apps such as Gmail and Google Maps.',
       },
       {
         year: '2003',
         title: 'Broadband & Wi-Fi',
         blurb:
-          'Always-on connections and ubiquitous Wi-Fi untethered the internet from the desk and filled the home.',
+          'Always-on broadband and Wi-Fi replaced dial-up. People could stay connected all the time instead of tying up the phone line to get online.',
       },
       {
         year: '2007',
         title: 'The smartphone era',
         blurb:
-          'Feature phones gave way to the iPhone and Android. The pocket computer became the most important device of the century.',
+          'The iPhone and, later, Android replaced basic “feature phones.” The smartphone became the most-used computer for most people.',
         stat: { value: 6.1, decimals: 1, suffix: 'M', label: 'first-gen iPhones sold' },
       },
     ],
@@ -764,3 +768,277 @@ export const SECTIONS: SectionMeta[] = [
   { id: 'politics', index: 'IV', label: 'Political' },
   { id: 'finale', index: '∞', label: 'A New Canvas' },
 ]
+
+/* ============================================================
+   PAGE LAYER — the site is organized as one page per force.
+   The decade-wide thesis lives on the home page; each force
+   page carries its own claim, analysis, modern-day connection
+   and primary sources (the report's evidentiary spine).
+   ============================================================ */
+
+/** The order the four force pages appear in the nav and pager. */
+export const PAGE_ORDER: Lens[] = [
+  'technological',
+  'economic',
+  'social',
+  'political',
+]
+
+/** Lens → the on-page anchor id used by the single-page nav. */
+export const FORCE_ANCHOR: Record<Lens, string> = {
+  technological: 'tech',
+  economic: 'economy',
+  social: 'society',
+  political: 'politics',
+}
+
+/** Route slug ⇄ lens. Slugs are the hash-router paths (e.g. #/technological). */
+export const lensByRoute = (route: string): RippleLens | undefined =>
+  RIPPLE.find((l) => l.id === route)
+
+/** The overarching argument — answers the rubric's progress/conflict/
+ *  transformation prompt for the decade as a whole. Shown on the home page. */
+export const DECADE_THESIS = {
+  claim:
+    'The 2000s were less about steady progress and more about big change. In ten years a few technologies, mainly the internet, the smartphone, and social media, reshaped the economy, changed how people stay in touch, and moved power around.',
+  body: 'The decade started rough: the dot-com crash and then the September 11 attacks. It ended with a smartphone in almost everyone’s pocket and the first Black president, elected on an online campaign. Four forces, technological, economic, social, and political, changed at the same time and pushed on each other. Most of the gains came with trade-offs: more connection but less privacy, more opportunity but more instability. To understand the 2000s, you have to look at all four forces together.',
+}
+
+/** A modern-day connection — the heart of "Connections to Modern America." */
+export interface ThenNow {
+  label: string
+  then: string
+  now: string
+}
+
+/** A primary source, with the context + bias analysis the rubric asks for. */
+export interface PrimarySource {
+  title: string
+  author: string
+  date: string
+  kind: string
+  /** What it is and why it matters to this force's claim. */
+  context: string
+  /** Whose perspective it reflects — and how that shapes it. */
+  bias: string
+}
+
+export interface LensExtras {
+  /** A sharper, page-level claim for this single force. */
+  thesis: string
+  /** One paragraph drawing the line from the 2000s to today. */
+  todayLede: string
+  thenNow: ThenNow[]
+  sources: PrimarySource[]
+}
+
+export const LENS_EXTRAS: Record<Lens, LensExtras> = {
+  technological: {
+    thesis:
+      'The biggest change of the decade was the technology underneath everything. Computing moved off the desktop and onto the internet and the smartphone, so being online went from something you did to something that was always there.',
+    todayLede:
+      'Almost everything about how we use technology today was built during this decade. Always-on internet, cloud computing, interactive web apps, and touchscreens weren’t around in 2000. They were built between 2000 and 2010, and they are the base modern technology runs on.',
+    thenNow: [
+      {
+        label: 'Connectivity',
+        then: 'Dial-up tied you to a desk and a phone line, and getting online was a whole process.',
+        now: 'Phones stay connected to fast internet almost everywhere, all the time.',
+      },
+      {
+        label: 'Where software runs',
+        then: 'Programs came on discs and ran on the computer in front of you.',
+        now: 'Cloud services like AWS run most of the apps you use, rented by the second.',
+      },
+      {
+        label: 'How we control it',
+        then: 'You used a mouse, keyboard, or a plastic stylus to control a screen.',
+        now: 'Touchscreens are everywhere, controlled with your finger.',
+      },
+    ],
+    sources: [
+      {
+        title: 'iPhone introduction keynote',
+        author: 'Steve Jobs, Apple',
+        date: 'Macworld, Jan 9, 2007',
+        kind: 'Recorded keynote / video',
+        context:
+          'The live event where Steve Jobs first showed the iPhone and called it “an iPod, a phone, and an internet communicator” in one device.',
+        bias: 'This was an Apple sales event, so everything was chosen to make the product look good. It shows the vision, not the problems that came later.',
+      },
+      {
+        title: '“What Is Web 2.0”',
+        author: 'Tim O’Reilly',
+        date: 'Sep 30, 2005',
+        kind: 'Essay',
+        context:
+          'The essay that named “Web 2.0,” the shift from simple pages to websites people could interact with and add to.',
+        bias: 'It was written by a tech publisher who benefited from the trend, so it is part analysis and part promotion.',
+      },
+      {
+        title: 'Amazon S3 launch announcement',
+        author: 'Amazon Web Services',
+        date: 'Mar 14, 2006',
+        kind: 'Press release',
+        context:
+          'The announcement of cloud storage that companies could rent by the gigabyte, the start of the infrastructure behind most startups since.',
+        bias: 'It is a company press release aimed at developers, so it focuses on the benefits and leaves out the downsides.',
+      },
+    ],
+  },
+  economic: {
+    thesis:
+      'The decade was less about steady growth and more about money shifting from older industries to internet companies. Two big crashes, in 2000 and 2008, marked the start and the end of it.',
+    todayLede:
+      'A lot of today’s biggest companies got their start or their business model in the 2000s. Search ads, online shopping, and the app economy grew into some of the most valuable businesses in the world, while the 2008 crash changed banking rules and a whole generation’s view of the economy.',
+    thenNow: [
+      {
+        label: 'How big companies make money',
+        then: 'Google bet in 2004 that targeted search ads could pay for the whole web.',
+        now: 'Ad-supported companies are some of the largest in history, along with a big debate about privacy.',
+      },
+      {
+        label: 'Where we shop',
+        then: 'Online shopping was still a small part of retail, and people weren’t sure they could trust it.',
+        now: 'Shopping online is normal, and fast delivery has reshaped regular stores.',
+      },
+      {
+        label: 'After the crash',
+        then: 'Lehman Brothers’ failure in 2008 caused the worst crisis since the Great Depression.',
+        now: 'Rules like Dodd-Frank and the idea of banks being “too big to fail” still shape the economy.',
+      },
+    ],
+    sources: [
+      {
+        title: 'Form S-1 and the founders’ letter',
+        author: 'Google (Larry Page & Sergey Brin)',
+        date: 'Filed Apr 29, 2004',
+        kind: 'SEC filing / founders’ letter',
+        context:
+          'Google’s official paperwork for going public, including the founders’ letter, which laid out the search-advertising business that funded the modern internet.',
+        bias: 'It is a legal document meant to attract investors, so it is positive by design and only admits what the law requires.',
+      },
+      {
+        title: 'Lehman Brothers bankruptcy filing',
+        author: 'Lehman Brothers Holdings Inc.',
+        date: 'Sep 15, 2008',
+        kind: 'Federal bankruptcy filing',
+        context:
+          'The largest bankruptcy in U.S. history (about $639 billion), the event that marks the start of the global financial crisis.',
+        bias: 'It is a court filing that looks factual, but it came from a failing company that wanted its collapse to look orderly.',
+      },
+      {
+        title: 'Emergency Economic Stabilization Act (TARP)',
+        author: 'U.S. Congress',
+        date: 'Signed Oct 3, 2008',
+        kind: 'Federal legislation',
+        context:
+          'The $700 billion law that bailed out banks. It was the government’s main response to the crash and the start of years of “too big to fail” debates.',
+        bias: 'It was written quickly during a panic and under heavy lobbying, so it reflects what the banks and the Treasury wanted.',
+      },
+    ],
+  },
+  social: {
+    thesis:
+      'Social technology changed how people see themselves and connect. Staying in touch became constant and public, and personal data quietly became the way “free” websites made money.',
+    todayLede:
+      'A lot of today’s online habits, like posting about your life, scrolling a feed, and expecting an audience, started in this decade. So did the basic trade: the services were free because the companies made money from your data.',
+    thenNow: [
+      {
+        label: 'Identity',
+        then: 'A MySpace profile let people design a public version of themselves for the first time.',
+        now: 'Feeds chosen by algorithms shape identity and status for billions of people.',
+      },
+      {
+        label: 'Who can broadcast',
+        then: 'YouTube, blogs, and Wikipedia let regular people reach a big audience.',
+        now: 'Creators make a living online, and anyone can reach millions.',
+      },
+      {
+        label: 'The price of free',
+        then: 'Targeted ads and digital tracking showed up faster than the rules to control them.',
+        now: 'Data privacy is now a major political and legal issue.',
+      },
+    ],
+    sources: [
+      {
+        title: '“Me at the zoo”',
+        author: 'Jawed Karim (YouTube co-founder)',
+        date: 'Apr 23, 2005',
+        kind: 'Video / digital artifact',
+        context:
+          'The first video ever posted on YouTube, 19 seconds that marked the start of regular people making and sharing video.',
+        bias: 'It was just a casual clip, not a statement. It only seems important looking back, which is part of what makes it interesting.',
+      },
+      {
+        title: '“just setting up my twttr”',
+        author: 'Jack Dorsey',
+        date: 'Mar 21, 2006',
+        kind: 'Social-media post',
+        context:
+          'The first tweet ever posted, the beginning of short, public, real-time messages that changed how news spreads.',
+        bias: 'It was a throwaway test message, with none of the political weight Twitter would later have.',
+      },
+      {
+        title: '“Why Youth ♥ Social Network Sites”',
+        author: 'danah boyd (researcher)',
+        date: '2007',
+        kind: 'Academic essay',
+        context:
+          'A study from the time about how teenagers actually used MySpace and Facebook, written by a researcher instead of a company.',
+        bias: 'It is academic and sympathetic to teens, and it was meant to push back on the negative way the news covered these sites.',
+      },
+    ],
+  },
+  political: {
+    thesis:
+      'After 9/11, power moved in two directions at once. The government gained more surveillance power in the name of security, while blogs and social media let regular people break news and get around the big TV networks.',
+    todayLede:
+      'A lot of today’s political arguments started in the 2000s: how to balance security and privacy, running campaigns like data operations, and a news system where anyone can break a story, or fake one. We are still arguing about the questions this decade raised.',
+    thenNow: [
+      {
+        label: 'Security vs. privacy',
+        then: 'The PATRIOT Act expanded surveillance 45 days after 9/11.',
+        now: 'After leaks like Snowden’s, the fight over surveillance and privacy is ongoing and worldwide.',
+      },
+      {
+        label: 'How campaigns run',
+        then: 'Obama’s 2008 campaign used email, video, and social media and raised record money online.',
+        now: 'Campaigns are run with data and target voters individually.',
+      },
+      {
+        label: 'Who controls the story',
+        then: 'Blogs and forums broke stories the TV networks missed.',
+        now: 'Social media is the front page, and a major source of misinformation.',
+      },
+    ],
+    sources: [
+      {
+        title: 'USA PATRIOT Act',
+        author: 'U.S. Congress',
+        date: 'Signed Oct 26, 2001',
+        kind: 'Federal legislation',
+        context:
+          'The law passed after 9/11 that greatly expanded government surveillance. It began the modern fight over security versus privacy.',
+        bias: 'It was passed in 45 days during a time of fear, so it reflects security agencies’ priorities more than privacy concerns.',
+      },
+      {
+        title: 'Address to the Nation on 9/11',
+        author: 'President George W. Bush',
+        date: 'Sep 11, 2001',
+        kind: 'Presidential speech',
+        context:
+          'President Bush’s address to the country on the night of September 11. It is a record of how the decade’s biggest shock was explained to the public.',
+        bias: 'It is a leader speaking during a crisis, meant to reassure people, so it shapes emotion as much as it reports facts.',
+      },
+      {
+        title: 'Election-night victory speech (Grant Park)',
+        author: 'President-elect Barack Obama',
+        date: 'Nov 4, 2008',
+        kind: 'Campaign speech',
+        context:
+          'The speech at the end of the first internet-powered presidential campaign, and the election of the first Black president.',
+        bias: 'It is a victory speech built to inspire, so it celebrates the moment and leaves out the challenges that came next.',
+      },
+    ],
+  },
+}

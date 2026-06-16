@@ -37,7 +37,7 @@ const STEPS: Step[] = [
     who: 'The Press',
     voice: 'Voice = institutions',
     caption:
-      'After 9/11, the USA PATRIOT Act — signed ~45 days later — expanded surveillance.',
+      'After 9/11, the USA PATRIOT Act, signed about 45 days later, expanded surveillance.',
     power: 0,
   },
   {
@@ -46,7 +46,7 @@ const STEPS: Step[] = [
     who: 'The Bloggers',
     voice: 'Voice = citizens',
     caption:
-      '~50M blogs were tracked by 2006 — the gatekeepers lost their monopoly.',
+      'About 50M blogs were tracked by 2006, and the gatekeepers lost their monopoly.',
     power: 0.5,
   },
   {
@@ -55,7 +55,7 @@ const STEPS: Step[] = [
     who: 'Everyone',
     voice: 'Voice = the network',
     caption:
-      "Obama's web-powered campaign raised ~$750M — the first Black US president.",
+      "Obama's online campaign raised about $750M, and he became the first Black US president.",
     power: 1,
   },
 ]
@@ -183,7 +183,7 @@ export function PoliticalMegaphone() {
           transition={{ duration: 0.85, delay: 0.1, ease: EASE }}
           className="mt-5 max-w-[44ch] text-lg leading-relaxed text-mist"
         >
-          Who got to speak — and be heard — shifted across the decade. Tap a
+          Who got to speak, and be heard, shifted across the decade. Tap a
           year.
         </motion.p>
 

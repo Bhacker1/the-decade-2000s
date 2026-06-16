@@ -37,78 +37,46 @@ function useReducedMotion(): boolean {
 const IPHONE_EVENT = TIMELINE.find((t) => t.id === 'iphone')
 
 /* ================================================================== */
-/*  ACT 1 — THE MORPH                                                   */
-/*  Three identities converge into one device as you scroll.           */
+/*  INTRO — a short, plain explanation of what the iPhone was          */
 /* ================================================================== */
 
-const TRIAD = [
-  { id: 'ipod', label: 'an iPod', sub: 'widescreen · touch controls' },
-  { id: 'phone', label: 'a phone', sub: 'revolutionary' },
-  { id: 'net', label: 'an internet communicator', sub: 'the whole web' },
-] as const
-
 function MorphAct({ reduced }: { reduced: boolean }) {
-  // Clean, legible stacked reveal — the three identities resolve into one,
-  // each line fading up in sequence. No scroll-scrub (which overlapped).
   const reveal = (i: number) => ({
     initial: { opacity: 0, y: reduced ? 0 : 18 },
     whileInView: { opacity: 1, y: 0 },
     viewport: { once: true, margin: '-12% 0px' },
     transition: {
       duration: reduced ? 0 : 0.7,
-      delay: reduced ? 0 : i * 0.12,
+      delay: reduced ? 0 : i * 0.1,
       ease: [0.16, 1, 0.3, 1] as const,
     },
   })
 
   return (
-    <div className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden px-6 py-24 text-center">
-      {/* ambient bloom */}
-      <div aria-hidden className="pointer-events-none absolute inset-0">
-        <div className="absolute left-1/2 top-1/2 h-[60vmin] w-[60vmin] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(circle,rgba(214,255,59,0.18),transparent_62%)] blur-2xl" />
-      </div>
-
-      <div className="relative flex flex-col items-center gap-7">
+    <div className="relative px-6 py-24 text-center sm:py-28">
+      <div className="relative mx-auto max-w-3xl">
         <SectionLabel className="justify-center">
-          The Moment · Jan 9, 2007
+          The iPhone · January 9, 2007
         </SectionLabel>
 
-        <motion.p
-          {...reveal(0)}
-          className="font-mono text-xs uppercase tracking-[0.32em] text-mist"
-        >
-          Three things —
-        </motion.p>
-
-        <ul className="flex flex-col items-center gap-2">
-          {TRIAD.map((t, i) => (
-            <motion.li
-              key={t.id}
-              {...reveal(1 + i)}
-              className="text-big font-display tracking-tight text-chrome"
-            >
-              {t.label}
-            </motion.li>
-          ))}
-        </ul>
-
-        <motion.p
-          {...reveal(4)}
-          className="font-mono text-xs uppercase tracking-[0.32em] text-mist"
-        >
-          are not three separate devices.
-        </motion.p>
-
         <motion.h2
-          {...reveal(5)}
-          className="text-giant font-display leading-[0.9] tracking-tight"
+          {...reveal(0)}
+          className="mt-6 font-display text-huge font-semibold leading-[0.95] tracking-tight text-ink"
         >
-          <span className="text-mist">…one device.</span>{' '}
-          <span className="grad-pop text-gradient">iPhone.</span>
+          Apple introduces the iPhone.
         </motion.h2>
 
-        {/* the quote */}
-        <motion.figure {...reveal(6)} className="mt-6 max-w-xl">
+        <motion.p
+          {...reveal(1)}
+          className="measure mx-auto mt-6 text-base leading-relaxed text-mist sm:text-lg"
+        >
+          On January 9, 2007, Steve Jobs introduced the iPhone as three things
+          in one device: an iPod, a phone, and a way to use the internet.
+          Instead of a keyboard or stylus, it used a touchscreen, and it
+          changed what people expected a phone to be.
+        </motion.p>
+
+        <motion.figure {...reveal(2)} className="mx-auto mt-8 max-w-xl">
           <blockquote className="text-balance font-display text-lg text-mist sm:text-xl">
             “{QUOTES.iphone.text}”
           </blockquote>
@@ -328,7 +296,7 @@ function appCopy(name: string): { title: string; lines: string[] } {
     Safari: {
       title: 'Safari',
       lines: [
-        'The real internet — not the “mobile web.”',
+        'The real internet, not a cut-down mobile version.',
         'Pinch to zoom. Double-tap a column to fit.',
         'apple.com',
       ],
@@ -343,7 +311,7 @@ function appCopy(name: string): { title: string; lines: string[] } {
     },
     iPod: {
       title: 'iPod',
-      lines: ['Cover Flow', 'Flick through album art with a finger.', '1,000 songs, again — in here too.'],
+      lines: ['Cover Flow', 'Flick through album art with a finger.', '1,000 songs, again, in here too.'],
     },
     Maps: {
       title: 'Maps',
@@ -363,7 +331,7 @@ function appCopy(name: string): { title: string; lines: string[] } {
     },
     Calendar: {
       title: 'Calendar',
-      lines: ['Today', 'Day · Week · List, in your pocket.', 'June 29 — release day.'],
+      lines: ['Today', 'Day · Week · List, in your pocket.', 'June 29, release day.'],
     },
     Notes: {
       title: 'Notes',
@@ -539,7 +507,7 @@ function PhoneDevice({ reduced }: { reduced: boolean }) {
           type="button"
           onClick={handleHome}
           disabled={!openApp}
-          aria-label="Home button — return to home screen"
+          aria-label="Home button, return to home screen"
           className={cn(
             'pointer-events-auto grid h-[34px] w-[34px] place-items-center rounded-full bg-gradient-to-b from-[#16171a] to-[#050506] ring-1 ring-white/15 transition',
             openApp
@@ -647,7 +615,7 @@ function CopyColumn() {
 
   return (
     <div ref={ref} className="flex flex-col gap-7">
-      <p className="kicker">Hands on the glass</p>
+      <p className="kicker">How it worked</p>
 
       <motion.h2
         className="font-display text-huge font-semibold leading-[0.92] tracking-tight text-ink"
@@ -655,9 +623,9 @@ function CopyColumn() {
         animate={inView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
       >
-        Reinventing the phone,
+        A phone you control
         <br />
-        <span className="grad-pop text-gradient">one finger at a time.</span>
+        <span className="grad-pop text-gradient">with your finger.</span>
       </motion.h2>
 
       <motion.p
@@ -666,10 +634,9 @@ function CopyColumn() {
         animate={inView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.9, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
       >
-        No stylus. No plastic keyboard. No menus to bury you. Just a single
-        sheet of glass and multi-touch — pinch, flick, tap. The most natural
-        pointing device anyone ever shipped was the one already attached to
-        your hand.
+        The iPhone had no stylus and no plastic keyboard. You used a touchscreen
+        with your finger, tapping, pinching, and swiping, which was new for a
+        phone in 2007.
       </motion.p>
 
       <blockquote className="border-l-2 border-acid/60 pl-4">
@@ -713,8 +680,8 @@ function CopyColumn() {
       </div>
 
       <p className="max-w-md text-sm text-mist">
-        Try it. Slide to unlock — then tap an icon to open it, and press the
-        home button to come back. Keyboard works too:{' '}
+        Try it: slide to unlock, tap an app to open it, and press the home
+        button to go back. You can also use the keyboard:{' '}
         <span className="font-mono text-ink">Enter</span> to unlock,{' '}
         <span className="font-mono text-ink">Esc</span> to go home.
       </p>
@@ -766,7 +733,7 @@ export function IphoneMoment() {
       aria-labelledby="iphone-heading"
     >
       <h2 id="iphone-heading" className="sr-only">
-        The Moment — Apple reinvents the phone, January 9, 2007
+        Apple reinvents the phone, January 9, 2007
       </h2>
 
       {/* top edge fade for a seamless seam with the prior section */}

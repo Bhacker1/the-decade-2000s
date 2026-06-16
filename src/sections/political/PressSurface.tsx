@@ -147,7 +147,7 @@ export function PressSurface() {
             fontWeight: 600,
           }}
         >
-          <span>Vol. CL — No. 51,204</span>
+          <span>Vol. CL · No. 51,204</span>
           <span style={{ letterSpacing: '0.07em', color: INK }}>
             Tuesday, September 11, 2001
           </span>
@@ -286,7 +286,7 @@ export function PressSurface() {
                   color: INK_SOFT,
                 }}
               >
-                — From an evening address to the nation
+                From an evening address to the nation
               </div>
             </blockquote>
 
@@ -300,7 +300,7 @@ export function PressSurface() {
             <p style={para}>
               In the capital, the business of government continued under guard.
               Lawmakers returned to the steps where they convene and, in the
-              fading light, lifted their voices in song — a small, unscripted act
+              fading light, lifted their voices in song, a small, unscripted act
               that traveled the country faster than any decree.
             </p>
             <p style={{ ...para, marginBottom: 0 }}>
@@ -456,7 +456,7 @@ export function PressSurface() {
             <b style={{ color: INK }}>Weather:</b> Clear, cool. High 73, Low 58.
           </span>
           <span>Editorials A14 · Business B1 · Sports D1 · Obituaries C12</span>
-          <span>www.dailyherald.example — printed daily since 1851</span>
+          <span>www.dailyherald.example · printed daily since 1851</span>
         </div>
       </div>
 

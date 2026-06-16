@@ -34,7 +34,7 @@ export function FeedSurface() {
       text: (
         <>
           Polls are open until 8pm tonight! Not sure where to go? Text your ZIP
-          to find your polling place. Bring a friend, bring your roommate —{' '}
+          to find your polling place. Bring a friend, bring your roommate,{' '}
           <span style={{ color: '#2a64b4' }}>every</span> vote counts. 🇺🇸
         </>
       ),
@@ -49,7 +49,7 @@ export function FeedSurface() {
       time: '· 1h',
       text: (
         <>
-          🔴 LIVE in 30 min — the candidates take the stage. Watch the stream
+          🔴 LIVE in 30 min. The candidates take the stage. Watch the stream
           and tweet along with us:{' '}
           <span style={{ color: '#2a64b4', textDecoration: 'underline' }}>
             http://tinyurl.com/debate08
@@ -67,7 +67,7 @@ export function FeedSurface() {
       time: '· 2h',
       text: (
         <>
-          Snapped this from the rally downtown — the line wraps around two whole
+          Snapped this from the rally downtown. The line wraps around two whole
           blocks. Never seen anything like it. Posting more pics from my phone.
           📷
         </>
@@ -83,7 +83,7 @@ export function FeedSurface() {
       time: '· 3h',
       text: (
         <>
-          Just got off the phone bank — 60 calls, 12 commitments to vote.
+          Just got off the phone bank: 60 calls, 12 commitments to vote.
           Grassroots works, people. Who else is volunteering this weekend?{' '}
           <span style={{ color: '#2a64b4' }}>#GetOutTheVote</span>
         </>
@@ -475,7 +475,7 @@ export function FeedSurface() {
                     marginTop: 3,
                   }}
                 >
-                  We just hit a new record — powered by{' '}
+                  We just hit a new record, powered by{' '}
                   <b>millions of small donors</b> giving what they can. This is
                   what people-powered looks like. Chip in $5 and be part of it. 💙
                 </div>

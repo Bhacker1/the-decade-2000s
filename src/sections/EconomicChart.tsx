@@ -112,7 +112,7 @@ export function EconomicChart() {
             <span className="text-tangerine">one decade.</span>
           </h2>
           <p className="max-w-md text-mist">
-            The NASDAQ across the 2000s — boom, bust, and back.
+            The NASDAQ across the 2000s: boom, bust, and back.
           </p>
         </header>
 

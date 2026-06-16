@@ -1,19 +1,17 @@
 import { useState } from 'react'
 import { SmoothScroll } from '@/lib/smooth-scroll'
-import { Nav } from '@/components/Nav'
+import { SiteNav } from '@/components/SiteNav'
 import { Loader } from '@/components/Loader'
 import { Cursor } from '@/components/Cursor'
 import { GrainOverlay } from '@/components/ui/GrainOverlay'
 import { ScrollProgress } from '@/components/ui/ScrollProgress'
+import { HomePage } from '@/pages/HomePage'
 
-import { Hero } from '@/sections/Hero'
-import { ActIntro } from '@/sections/ActIntro'
-import { IphoneMoment } from '@/sections/IphoneMoment'
-import { EconomicChart } from '@/sections/EconomicChart'
-import { SocialNetwork } from '@/sections/SocialNetwork'
-import { PoliticalMegaphone } from '@/sections/PoliticalMegaphone'
-import { Finale } from '@/sections/Finale'
-
+/**
+ * The whole experience lives on one page: a title screen, the decade-wide
+ * thesis, a short summary of each of the four forces, and a close. The nav
+ * smooth-scrolls between sections.
+ */
 function App() {
   const [, setLoaded] = useState(false)
 
@@ -29,28 +27,10 @@ function App() {
       <Cursor />
       <GrainOverlay />
       <ScrollProgress />
-      <Nav />
+      <SiteNav />
 
       <main id="main-content" tabIndex={-1} className="relative overflow-clip">
-        <Hero />
-
-        {/* Force I — Technological */}
-        <ActIntro lensId="technological" sectionId="tech" />
-        <IphoneMoment />
-
-        {/* Force II — Economic */}
-        <ActIntro lensId="economic" sectionId="economy" />
-        <EconomicChart />
-
-        {/* Force III — Social */}
-        <ActIntro lensId="social" sectionId="society" />
-        <SocialNetwork />
-
-        {/* Force IV — Political */}
-        <ActIntro lensId="political" sectionId="politics" />
-        <PoliticalMegaphone />
-
-        <Finale />
+        <HomePage />
       </main>
     </SmoothScroll>
   )
